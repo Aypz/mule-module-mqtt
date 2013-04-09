@@ -8,9 +8,16 @@
 
     <mqtt:config clientId="muleclient" cleanSession="true" />
 
-    <flow name="testMessagePublish">
-        <vm:inbound-endpoint path="testMessagePublish.in" />
+    <flow name="testMessagePublisher">
+        <poll frequency="5000">
+            <set-payload value="message-#[System.currentTimeMillis()]" />
+        </poll>
         <mqtt:publish topicName="test/topic" />
     </flow>
 
+    <flow name="testMessageListener">
+        <mqtt:subscribe topicFilter="test/topic" />
+        <logger level="INFO" />
+        <logger level="INFO" message="#[message.payloadAs(java.lang.String)]" />
+    </flow>
 </mule>

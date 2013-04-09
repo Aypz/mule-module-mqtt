@@ -7,13 +7,13 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.mule.api.callback.SourceCallback;
+
+import com.angrygiant.mule.mqtt.MqttConnector.DeliveryQoS;
 
 /**
  * Mule MQTT Module
@@ -38,103 +38,45 @@ public class MqttTopicListener implements MqttCallback
 {
     private static final Log LOGGER = LogFactory.getLog(MqttTopicListener.class);
 
-    public static final String TOPIC_NAME = "mqtt.topic.name";
-    public static final String MESSAGE_DUPLICATE = "mqtt.message.duplicated";
-    public static final String MESSAGE_RETAIN = "mqtt.message.retained";
-    public static final String MESSAGE_QOS = "mqtt.message.qos";
-    public static final String CLIENT_ID = "mqtt.client.id";
-    public static final String CLIENT_URI = "mqtt.client.serverUri";
-
-    private final MqttClient client;
+    private final MqttConnector connector;
     private final SourceCallback callback;
-    private final MqttConnectOptions connectOptions;
-    private final String topicName;
-    private int qos = 2;
-    private long subscriptionDelay = 500;
 
-    public MqttTopicListener(final MqttClient client,
-                             final SourceCallback callback,
-                             final String topicName,
-                             final MqttConnectOptions connectOptions,
-                             final long subscriptionDelay,
-                             final int qos)
+    public MqttTopicListener(final MqttConnector connector, final SourceCallback callback)
     {
-        this.client = client;
+        this.connector = connector;
         this.callback = callback;
-        this.topicName = topicName;
-        this.connectOptions = connectOptions;
-        this.subscriptionDelay = subscriptionDelay;
-        this.qos = qos;
     }
 
     public void connectionLost(final Throwable throwable)
     {
-        LOGGER.warn("AH! You got throw off the broker! - Attempting to reconnect...");
-        LOGGER.trace(throwable);
+        LOGGER.error("Disconnecting connector after losing connection", throwable);
 
-        if (!canReconnect())
+        try
         {
-            LOGGER.error("Can't reconnect to broker! No Messages will be received!");
+            connector.disconnect();
         }
-    }
-
-    private boolean canReconnect()
-    {
-        boolean reconnected = false;
-
-        if (!client.isConnected())
+        catch (final MqttException me)
         {
-            try
-            {
-                LOGGER.debug("Sending disconnect for client...");
-                client.disconnect();
-
-                LOGGER.debug("Setting callback method to myself...");
-                client.setCallback(this);
-
-                LOGGER.debug("Connecting with connection options provided from mqtt:config element...");
-                client.connect(connectOptions);
-
-                LOGGER.debug("Sleeping to waiting for established connection...");
-                Thread.sleep(subscriptionDelay);
-
-                LOGGER.debug("Subscribing to topic " + topicName + " with QOS of " + qos);
-                client.subscribe(this.topicName, this.qos);
-
-                LOGGER.debug("Reconnection was successful - setting flag to true");
-                reconnected = true;
-            }
-            catch (final MqttException e)
-            {
-                LOGGER.error("MQTT Error while reconnecting for subscription: ", e);
-            }
-            catch (final InterruptedException e)
-            {
-                LOGGER.error("Sleep Error while reconnecting for subscription: ", e);
-            }
+            LOGGER.debug("Failed to cleanly disconnect connector", me);
         }
-
-        LOGGER.debug("Reconnection is determined as " + (client.isConnected() && reconnected));
-        return client.isConnected() && reconnected;
     }
 
     public void messageArrived(final MqttTopic mqttTopic, final MqttMessage mqttMessage) throws Exception
     {
-        LOGGER.info("Creating new Mule message - got something on " + mqttTopic.getName());
+        if (LOGGER.isDebugEnabled())
+        {
+            LOGGER.debug("Message arrived on topic: " + mqttTopic.getName() + " is: " + mqttMessage);
+        }
 
         final Map<String, Object> properties = new HashMap<String, Object>();
-        properties.put(MESSAGE_DUPLICATE, mqttMessage.isDuplicate());
-        properties.put(MESSAGE_QOS, mqttMessage.getQos());
-        properties.put(MESSAGE_RETAIN, mqttMessage.isRetained());
-        properties.put(TOPIC_NAME, mqttTopic.getName());
-        properties.put(CLIENT_ID, this.client.getClientId());
-        properties.put(CLIENT_URI, this.client.getServerURI());
+        properties.put(MqttConnector.MQTT_TOPIC_NAME_PROPERTY, mqttTopic.getName());
+        properties.put(MqttConnector.MQTT_QOS_PROPERTY, DeliveryQoS.fromCode(mqttMessage.getQos()));
 
-        this.callback.process(mqttMessage.getPayload(), properties);
+        callback.process(mqttMessage.getPayload(), properties);
     }
 
     public void deliveryComplete(final MqttDeliveryToken mqttDeliveryToken)
     {
-        LOGGER.trace("Message Delivered");
+        // NOOP
     }
 }

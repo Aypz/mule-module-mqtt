@@ -4,7 +4,7 @@
 
 package com.angrygiant.mule.mqtt;
 
-import java.io.IOException;
+import javax.inject.Inject;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,18 +19,21 @@ import org.eclipse.paho.client.mqttv3.MqttPersistenceException;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.mule.api.ConnectionException;
 import org.mule.api.ConnectionExceptionCode;
+import org.mule.api.MuleEvent;
 import org.mule.api.annotations.Configurable;
 import org.mule.api.annotations.Connect;
 import org.mule.api.annotations.ConnectionIdentifier;
 import org.mule.api.annotations.Connector;
 import org.mule.api.annotations.Disconnect;
 import org.mule.api.annotations.Processor;
+import org.mule.api.annotations.Source;
 import org.mule.api.annotations.ValidateConnection;
 import org.mule.api.annotations.display.Password;
 import org.mule.api.annotations.param.ConnectionKey;
 import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
 import org.mule.api.annotations.param.Payload;
+import org.mule.api.callback.SourceCallback;
 import org.mule.util.StringUtils;
 
 /**
@@ -54,7 +57,41 @@ import org.mule.util.StringUtils;
 @Connector(name = "mqtt", schemaVersion = "1.0", friendlyName = "MQTT", minMuleVersion = "3.3.0", description = "MQTT Module")
 public class MqttConnector
 {
+    public static enum DeliveryQoS
+    {
+        FIRE_AND_FORGET(0), AT_LEAST_ONCE(1), ONLY_ONCE(2);
+
+        private final int code;
+
+        private DeliveryQoS(final int code)
+        {
+            this.code = code;
+        }
+
+        public int getCode()
+        {
+            return code;
+        }
+
+        public static DeliveryQoS fromCode(final int code)
+        {
+            for (final DeliveryQoS qos : values())
+            {
+                if (qos.getCode() == code)
+                {
+                    return qos;
+                }
+            }
+            throw new IllegalArgumentException(code + " is not a valid QoS value");
+        }
+    }
+
     private static final Log LOGGER = LogFactory.getLog(MqttConnector.class);
+
+    public static final String MQTT_PROPERTIES_PREFIX = "mqtt";
+    public static final String MQTT_TOPIC_NAME_PROPERTY = MQTT_PROPERTIES_PREFIX + ".topicName";
+    public static final String MQTT_QOS_PROPERTY = MQTT_PROPERTIES_PREFIX + ".qos";
+    public static final String MQTT_DELIVERY_TOKEN_VARIABLE = MQTT_PROPERTIES_PREFIX + ".deliveryToken";
 
     public static final int MQTT_DEFAULT_PORT = 1883;
     public static final String MQTT_DEFAULT_HOST = "localhost";
@@ -150,15 +187,6 @@ public class MqttConnector
     @Configurable
     @Optional
     private String persistenceLocation;
-
-    /**
-     * Milliseconds of delay before subscription to a topic occurs. Gives the client time to
-     * connect.
-     */
-    @Configurable
-    @Optional
-    @Default("500")
-    private long subscriptionDelay;
 
     private MqttClient client;
     private MqttConnectOptions connectOptions = new MqttConnectOptions();
@@ -256,7 +284,7 @@ public class MqttConnector
     @Disconnect
     public void disconnect() throws MqttException
     {
-        if (client.isConnected())
+        if ((client != null) && (client.isConnected()))
         {
             LOGGER.info("Diconnecting from MQTT broker...");
             client.disconnect();
@@ -284,23 +312,6 @@ public class MqttConnector
         return client.getClientId();
     }
 
-    public enum DeliveryQoS
-    {
-        FIRE_AND_FORGET(0), AT_LEAST_ONCE(1), ONLY_ONCE(2);
-
-        private final int code;
-
-        private DeliveryQoS(final int code)
-        {
-            this.code = code;
-        }
-
-        public int getCode()
-        {
-            return code;
-        }
-    }
-
     /**
      * Publish a message to a topic.
      * <p/>
@@ -314,10 +325,12 @@ public class MqttConnector
      *         {@link MqttMessage}.
      */
     @Processor
-    public MqttDeliveryToken publish(final String topicName,
-                                     @Optional final Long waitForCompletionTimeOut,
-                                     @Optional @Default("AT_LEAST_ONCE") final DeliveryQoS qos,
-                                     @Payload final byte[] messagePayload) throws MqttException, IOException
+    @Inject
+    public byte[] publish(final String topicName,
+                          @Optional final Long waitForCompletionTimeOut,
+                          @Optional @Default("AT_LEAST_ONCE") final DeliveryQoS qos,
+                          @Payload final byte[] messagePayload,
+                          final MuleEvent muleEvent) throws MqttException
     {
         if (LOGGER.isDebugEnabled())
         {
@@ -336,7 +349,7 @@ public class MqttConnector
 
         if (LOGGER.isDebugEnabled())
         {
-            LOGGER.debug("Publishing message to broker");
+            LOGGER.debug("Publishing message to broker with QoS: " + qos);
         }
 
         final MqttDeliveryToken token = topic.publish(mqttMessage);
@@ -351,7 +364,10 @@ public class MqttConnector
             token.waitForCompletion(waitForCompletionTimeOut);
         }
 
-        return token;
+        // exposed as a flowVar so further/custom completion handling can be done downstream
+        muleEvent.setFlowVariable(MQTT_DELIVERY_TOKEN_VARIABLE, token);
+
+        return messagePayload;
     }
 
     /**
@@ -359,7 +375,6 @@ public class MqttConnector
      * <p/>
      * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:subscribe}
      * 
-     * @param subscriberId required subscriber id to use for subscription
      * @param topicName topic to publish message to
      * @param filter topic filter string, comma delimited if multiple (takes precedence over topic
      *            name)
@@ -367,85 +382,26 @@ public class MqttConnector
      * @param callback qos level to use when publishing message
      * @return
      */
-    // @Source
-    // public void subscribe(final String subscriberId,
-    // @Optional final String topicName,
-    // @Optional final String filter,
-    // @Optional @Default("1") final int qos,
-    // final SourceCallback callback) throws ConnectionException
-    // {
-    // LOGGER.info("Creating new client for topic subscription");
-    // final MqttClient subscriberClient = connectClient(subscriberId);
-    //
-    // String[] filters;
-    // int[] qoss;
-    // LOGGER.info("Deciding whether filter or name is used...");
-    //
-    // if (StringUtils.isNotBlank(filter))
-    // {
-    // LOGGER.info("Building filters list");
-    // filters = filter.split(",");
-    //
-    // LOGGER.debug("I have " + filters.length
-    // + " filters defined.  Creating matching queue of qos levels");
-    // qoss = new int[filters.length];
-    //
-    // for (int i = 0; i < filters.length; i++)
-    // {
-    // qoss[i] = qos;
-    // }
-    // }
-    // else
-    // {
-    // filters = null;
-    // qoss = null;
-    // }
-    //
-    // try
-    // {
-    // subscriberClient.disconnect();
-    // }
-    // catch (final MqttException e)
-    // {
-    // LOGGER.warn("Pre-emptive disconnect called before subscription, errors occurred: " + e);
-    // }
-    //
-    // try
-    // {
-    // subscriberClient.setCallback(new MqttTopicListener(subscriberClient, callback, topicName,
-    // connectOptions, getSubscriptionDelay(), qos));
-    // subscriberClient.connect(connectOptions);
-    //
-    // Thread.sleep(getSubscriptionDelay());
-    //
-    // if (filters != null)
-    // {
-    // LOGGER.debug("Subscribing to filters...");
-    // subscriberClient.subscribe(filters, qoss);
-    // }
-    // else
-    // {
-    // LOGGER.debug("Subscribing to topic name...");
-    // subscriberClient.subscribe(topicName, qos);
-    // }
-    // }
-    // catch (final MqttException e)
-    // {
-    // LOGGER.error("MQTT Exceptions occurred subscribing", e);
-    // throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, "Subscription Error",
-    // e);
-    // }
-    // catch (final InterruptedException ie)
-    // {
-    // LOGGER.error("Interrupt exception occurred sleeping before subscribing...");
-    // throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, "Interrupt Error", ie);
-    // }
-    //
-    // LOGGER.info("Done subscribing to topic " + topicName);
-    // }
+    // TODO support multiple topicFilter/qos pairs
+    @Source
+    public void subscribe(final String topicFilter,
+                          @Optional @Default("AT_LEAST_ONCE") final DeliveryQoS qos,
+                          final SourceCallback callback) throws ConnectionException
+    {
+        try
+        {
+            client.setCallback(new MqttTopicListener(this, callback));
+            client.subscribe(topicFilter, qos.getCode());
+        }
+        catch (final MqttException me)
+        {
+            throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, "Subscription Error", me);
+        }
+
+        LOGGER.info("Subscribed to topic filter: " + topicFilter + " with QoS: " + qos);
+    }
 
     // Getters and Setters
-
     public MqttClient getMqttClient()
     {
         return client;
@@ -569,15 +525,5 @@ public class MqttConnector
     public void setLwtRetained(final boolean lwtRetained)
     {
         this.lwtRetained = lwtRetained;
-    }
-
-    public long getSubscriptionDelay()
-    {
-        return subscriptionDelay;
-    }
-
-    public void setSubscriptionDelay(final long subscriptionDelay)
-    {
-        this.subscriptionDelay = subscriptionDelay;
     }
 }
