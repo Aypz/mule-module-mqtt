@@ -11,9 +11,11 @@
         </layout>
     </appender>
 
+    <!-- 
     <logger name="com.angrygiant.mule.mqtt">
         <level value="DEBUG" />
     </logger>
+    -->
 
     <root>
         <priority value="INFO" />

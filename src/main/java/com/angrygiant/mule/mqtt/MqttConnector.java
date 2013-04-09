@@ -4,8 +4,12 @@
 
 package com.angrygiant.mule.mqtt;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
+import org.apache.commons.lang.Validate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -36,6 +40,8 @@ import org.mule.api.annotations.param.Payload;
 import org.mule.api.callback.SourceCallback;
 import org.mule.util.StringUtils;
 
+import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
+
 /**
  * Mule MQTT Module
  * <p/>
@@ -57,6 +63,7 @@ import org.mule.util.StringUtils;
 @Connector(name = "mqtt", schemaVersion = "1.0", friendlyName = "MQTT", minMuleVersion = "3.3.0", description = "MQTT Module")
 public class MqttConnector
 {
+
     public static enum DeliveryQoS
     {
         FIRE_AND_FORGET(0), AT_LEAST_ONCE(1), ONLY_ONCE(2);
@@ -93,24 +100,17 @@ public class MqttConnector
     public static final String MQTT_QOS_PROPERTY = MQTT_PROPERTIES_PREFIX + ".qos";
     public static final String MQTT_DELIVERY_TOKEN_VARIABLE = MQTT_PROPERTIES_PREFIX + ".deliveryToken";
 
-    public static final int MQTT_DEFAULT_PORT = 1883;
-    public static final String MQTT_DEFAULT_HOST = "localhost";
+    public static final String MQTT_DEFAULT_BROKER_URI = "tcp://localhost:1883";
+    private static final String MQTT_DEFAULT_QOS_STRING = "AT_LEAST_ONCE";
+    public static final DeliveryQoS MQTT_DEFAULT_QOS = DeliveryQoS.valueOf(MQTT_DEFAULT_QOS_STRING);
 
     /**
-     * MQTT broker host name.
+     * MQTT broker server URI.
      */
     @Configurable
     @Optional
-    @Default("localhost")
-    private String brokerHostName = MQTT_DEFAULT_HOST;
-
-    /**
-     * MQTT broker port number.
-     */
-    @Configurable
-    @Optional
-    @Default("1883")
-    private int brokerPort = MQTT_DEFAULT_PORT;
+    @Default(MQTT_DEFAULT_BROKER_URI)
+    private String brokerServerUri;
 
     /**
      * Clean Session.
@@ -203,12 +203,10 @@ public class MqttConnector
 
         setupConnectOptions();
 
-        final String brokerUrl = "tcp://" + getBrokerHostName() + ":" + getBrokerPort();
-
         try
         {
             LOGGER.debug("Creating client with ID of " + clientId);
-            client = new MqttClient(brokerUrl, clientId, clientPersistence);
+            client = new MqttClient(getBrokerServerUri(), clientId, clientPersistence);
         }
         catch (final MqttException me)
         {
@@ -235,7 +233,8 @@ public class MqttConnector
                 "Failed to connect the MQTT client", me);
         }
 
-        LOGGER.info("MQTT client successfully connected with ID: " + clientId + " at: " + brokerUrl);
+        LOGGER.info("MQTT client successfully connected with ID: " + clientId + " at: "
+                    + getBrokerServerUri());
     }
 
     private MqttClientPersistence initializeClientPersistence() throws ConnectionException
@@ -328,7 +327,7 @@ public class MqttConnector
     @Inject
     public byte[] publish(final String topicName,
                           @Optional final Long waitForCompletionTimeOut,
-                          @Optional @Default("AT_LEAST_ONCE") final DeliveryQoS qos,
+                          @Optional @Default(MQTT_DEFAULT_QOS_STRING) final DeliveryQoS qos,
                           @Payload final byte[] messagePayload,
                           final MuleEvent muleEvent) throws MqttException
     {
@@ -382,23 +381,59 @@ public class MqttConnector
      * @param callback qos level to use when publishing message
      * @return
      */
-    // TODO support multiple topicFilter/qos pairs
     @Source
-    public void subscribe(final String topicFilter,
-                          @Optional @Default("AT_LEAST_ONCE") final DeliveryQoS qos,
+    public void subscribe(@Optional final String topicFilter,
+                          @Optional @Default(MQTT_DEFAULT_QOS_STRING) final DeliveryQoS qos,
+                          @Optional final List<MqttTopicSubscription> topicSubscriptions,
                           final SourceCallback callback) throws ConnectionException
     {
+        final List<MqttTopicSubscription> actualSubscriptions = new ArrayList<MqttTopicSubscription>();
+        if (topicSubscriptions != null)
+        {
+            for (final Object o : topicSubscriptions)
+            {
+                // FIXME why is DevKit passing a MqttTopicSubscriptionExpressionHolder ?
+                final MqttTopicSubscriptionExpressionHolder holder = (MqttTopicSubscriptionExpressionHolder) o;
+
+                if (holder.getTopicFilter() != null)
+                {
+                    final MqttTopicSubscription topicSubscription = new MqttTopicSubscription(
+                        holder.getTopicFilter().toString(),
+                        holder.getQos() == null ? null : DeliveryQoS.valueOf(holder.getQos().toString()));
+
+                    actualSubscriptions.add(new MqttTopicSubscription(topicSubscription.getTopicFilter(),
+                        topicSubscription.getQos()));
+                }
+            }
+        }
+        if (StringUtils.isNotBlank(topicFilter))
+        {
+            actualSubscriptions.add(new MqttTopicSubscription(topicFilter, qos));
+        }
+
+        Validate.notEmpty(actualSubscriptions, "No topic filter has been defined to subscribe to");
+
+        final String[] topicFilters = new String[actualSubscriptions.size()];
+        final int[] qoss = new int[actualSubscriptions.size()];
+        int i = 0;
+        for (final MqttTopicSubscription actualSubscription : actualSubscriptions)
+        {
+            topicFilters[i] = actualSubscription.getTopicFilter();
+            qoss[i] = actualSubscription.getQos().getCode();
+            i++;
+        }
+
         try
         {
             client.setCallback(new MqttTopicListener(this, callback));
-            client.subscribe(topicFilter, qos.getCode());
+            client.subscribe(topicFilters, qoss);
         }
         catch (final MqttException me)
         {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, "Subscription Error", me);
         }
 
-        LOGGER.info("Subscribed to topic filter: " + topicFilter + " with QoS: " + qos);
+        LOGGER.info("Subscribed to: " + actualSubscriptions);
     }
 
     // Getters and Setters
@@ -407,24 +442,14 @@ public class MqttConnector
         return client;
     }
 
-    public String getBrokerHostName()
+    public String getBrokerServerUri()
     {
-        return brokerHostName;
+        return brokerServerUri;
     }
 
-    public void setBrokerHostName(final String brokerHostName)
+    public void setBrokerServerUri(final String brokerServerUri)
     {
-        this.brokerHostName = brokerHostName;
-    }
-
-    public int getBrokerPort()
-    {
-        return brokerPort;
-    }
-
-    public void setBrokerPort(final int brokerPort)
-    {
-        this.brokerPort = brokerPort;
+        this.brokerServerUri = brokerServerUri;
     }
 
     public boolean isCleanSession()

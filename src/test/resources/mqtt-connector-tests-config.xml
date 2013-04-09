@@ -6,18 +6,32 @@
         http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
         http://www.mulesoft.org/schema/mule/mqtt http://www.mulesoft.org/schema/mule/mqtt/current/mule-mqtt.xsd">
 
-    <mqtt:config clientId="muleclient" cleanSession="true" />
+    <mqtt:config name="muleClient1" clientId="muleClient1">
+        <reconnect-forever frequency="5000" />
+    </mqtt:config>
+    
+    <mqtt:config name="muleClient2" clientId="muleClient2">
+        <reconnect-forever frequency="5000" />
+    </mqtt:config>
 
     <flow name="testMessagePublisher">
         <poll frequency="5000">
             <set-payload value="message-#[System.currentTimeMillis()]" />
         </poll>
-        <mqtt:publish topicName="test/topic" />
+        <mqtt:publish topicName="test/topic" config-ref="muleClient1" />
     </flow>
 
     <flow name="testMessageListener">
-        <mqtt:subscribe topicFilter="test/topic" />
-        <logger level="INFO" />
-        <logger level="INFO" message="#[message.payloadAs(java.lang.String)]" />
+        <mqtt:subscribe topicFilter="test/topic" config-ref="muleClient1" />
+        <logger level="INFO" message="Single> #[message.payloadAs(java.lang.String)]" />
+    </flow>
+
+    <flow name="testMultiMessageListener">
+        <mqtt:subscribe topicFilter="test/topic" config-ref="muleClient2">
+            <mqtt:topic-subscriptions>
+                <mqtt:topic-subscription topicFilter="test/other" />
+            </mqtt:topic-subscriptions>
+        </mqtt:subscribe>
+        <logger level="INFO" message="Multi>  #[message.payloadAs(java.lang.String)]" />
     </flow>
 </mule>
