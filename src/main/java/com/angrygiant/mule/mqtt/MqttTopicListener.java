@@ -4,7 +4,8 @@ package com.angrygiant.mule.mqtt;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -35,7 +36,7 @@ import org.mule.api.callback.SourceCallback;
  */
 public class MqttTopicListener implements MqttCallback
 {
-    private static final Logger LOGGER = Logger.getLogger(MqttTopicListener.class);
+    private static final Log LOGGER = LogFactory.getLog(MqttTopicListener.class);
 
     public static final String TOPIC_NAME = "mqtt.topic.name";
     public static final String MESSAGE_DUPLICATE = "mqtt.message.duplicated";
@@ -50,15 +51,6 @@ public class MqttTopicListener implements MqttCallback
     private final String topicName;
     private int qos = 2;
     private long subscriptionDelay = 500;
-
-    public MqttTopicListener(final MqttClient client,
-                             final SourceCallback callback,
-                             final String topicName,
-                             final MqttConnectOptions connectOptions,
-                             final long subscriptionDelay)
-    {
-        this(client, callback, topicName, connectOptions, subscriptionDelay, 2);
-    }
 
     public MqttTopicListener(final MqttClient client,
                              final SourceCallback callback,
