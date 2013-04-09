@@ -185,7 +185,7 @@ public class MqttConnector
         catch (final MqttException me)
         {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null,
-                "Mule has issues with the MQTT client", me);
+                "Failed to create the MQTT client", me);
         }
 
         if ((StringUtils.isNotBlank(getLwtTopicName())) && (StringUtils.isNotEmpty(getLwtMessage())))
@@ -194,6 +194,17 @@ public class MqttConnector
             final MqttTopic lwtTopic = client.getTopic(getLwtTopicName());
             connectOptions.setWill(lwtTopic, getLwtMessage().getBytes(), getLwtQos(), false);
             LOGGER.info("Last will information configured");
+        }
+
+        try
+        {
+            LOGGER.debug("Connecting client with ID of " + clientId);
+            client.connect(connectOptions);
+        }
+        catch (final MqttException me)
+        {
+            throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null,
+                "Failed to connect the MQTT client", me);
         }
 
         LOGGER.info("MQTT client successfully connected with ID: " + clientId + " at: " + brokerUrl);
@@ -261,7 +272,7 @@ public class MqttConnector
     @ValidateConnection
     public boolean isConnected()
     {
-        return client.isConnected();
+        return client != null && client.isConnected();
     }
 
     /**
@@ -332,7 +343,11 @@ public class MqttConnector
 
         if (waitForCompletionTimeOut != null)
         {
-            LOGGER.debug("Waiting for completion for a maximum of " + waitForCompletionTimeOut + "ms");
+            if (LOGGER.isDebugEnabled())
+            {
+                LOGGER.debug("Waiting for completion for a maximum of " + waitForCompletionTimeOut + "ms");
+            }
+
             token.waitForCompletion(waitForCompletionTimeOut);
         }
 

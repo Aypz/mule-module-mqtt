@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mqtt="http://www.mulesoft.org/schema/mule/mqtt" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+    xsi:schemaLocation="
+        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+        http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+        http://www.mulesoft.org/schema/mule/mqtt http://www.mulesoft.org/schema/mule/mqtt/current/mule-mqtt.xsd">
+
+    <mqtt:config clientId="muleclient" cleanSession="true" />
+
+    <flow name="testMessagePublish">
+        <vm:inbound-endpoint path="testMessagePublish.in" />
+        <mqtt:publish topicName="test/topic" />
+    </flow>
+
+</mule>
