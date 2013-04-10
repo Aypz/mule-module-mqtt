@@ -11,8 +11,9 @@ has a given Quality of Service (QOS) setting that ranges from "fire and forget" 
 TESTING
 =======
 
-Test cases are still being worked on in this module.  Please see the "Quick Start" section to get a working environment
-set up locally.
+To run the integration tests on the default local [Mosquitto][mosquitto] setup, use:
+
+    mvn -Pit verify
 
 QUICK START
 ===========

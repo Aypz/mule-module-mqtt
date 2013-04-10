@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mqtt="http://www.mulesoft.org/schema/mule/mqtt" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+    xmlns:test="http://www.mulesoft.org/schema/mule/test"
     xsi:schemaLocation="
         http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
         http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+        http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd
         http://www.mulesoft.org/schema/mule/mqtt http://www.mulesoft.org/schema/mule/mqtt/current/mule-mqtt.xsd">
 
-    <mqtt:config name="muleClient1" clientId="muleClient1">
-        <reconnect-forever frequency="5000" />
-    </mqtt:config>
-    
-    <mqtt:config name="muleClient2" clientId="muleClient2">
-        <reconnect-forever frequency="5000" />
-    </mqtt:config>
+    <mqtt:config name="muleClient1" clientId="muleClient1" />
 
-    <flow name="testMessagePublisher">
-        <poll frequency="5000">
-            <set-payload value="message-#[System.currentTimeMillis()]" />
-        </poll>
-        <mqtt:publish topicName="test/topic" config-ref="muleClient1" />
+    <mqtt:config name="muleClient2" clientId="muleClient2" />
+
+    <flow name="publisher">
+        <vm:inbound-endpoint path="publisher.in"
+            exchange-pattern="request-response" />
+        <mqtt:publish topicName="#[message.inboundProperties.topicName]"
+            config-ref="muleClient1" />
     </flow>
 
-    <flow name="testMessageListener">
+    <flow name="subscriberSingleFilter">
         <mqtt:subscribe topicFilter="test/topic" config-ref="muleClient1" />
-        <logger level="INFO" message="Single> #[message.payloadAs(java.lang.String)]" />
+        <test:component />
     </flow>
 
-    <flow name="testMultiMessageListener">
+    <flow name="subscriberMultiFilters">
         <mqtt:subscribe topicFilter="test/topic" config-ref="muleClient2">
             <mqtt:topic-subscriptions>
                 <mqtt:topic-subscription topicFilter="test/other" />
             </mqtt:topic-subscriptions>
         </mqtt:subscribe>
-        <logger level="INFO" message="Multi>  #[message.payloadAs(java.lang.String)]" />
+        <test:component />
     </flow>
 </mule>
