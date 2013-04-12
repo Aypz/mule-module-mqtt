@@ -23,6 +23,7 @@ import org.eclipse.paho.client.mqttv3.MqttPersistenceException;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.mule.api.ConnectionException;
 import org.mule.api.ConnectionExceptionCode;
+import org.mule.api.MuleContext;
 import org.mule.api.MuleEvent;
 import org.mule.api.annotations.Configurable;
 import org.mule.api.annotations.Connect;
@@ -38,6 +39,7 @@ import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
 import org.mule.api.annotations.param.Payload;
 import org.mule.api.callback.SourceCallback;
+import org.mule.api.context.MuleContextAware;
 import org.mule.util.StringUtils;
 
 import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
@@ -61,9 +63,8 @@ import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
  * @author dmiller@angrygiant.com
  */
 @Connector(name = "mqtt", schemaVersion = "1.0", friendlyName = "MQTT", minMuleVersion = "3.3.0", description = "MQTT Module")
-public class MqttConnector
+public class MqttConnector implements MuleContextAware
 {
-
     public static enum DeliveryQoS
     {
         FIRE_AND_FORGET(0), AT_LEAST_ONCE(1), ONLY_ONCE(2);
@@ -188,8 +189,10 @@ public class MqttConnector
     @Optional
     private String persistenceLocation;
 
+    private MuleContext muleContext;
+    private String clientId;
     private MqttClient client;
-    private MqttConnectOptions connectOptions = new MqttConnectOptions();
+    private MqttConnectOptions connectOptions;
 
     /**
      * Connects the MQTT client.
@@ -199,6 +202,8 @@ public class MqttConnector
     @Connect
     public void connect(@ConnectionKey final String clientId) throws ConnectionException
     {
+        this.clientId = clientId;
+
         final MqttClientPersistence clientPersistence = initializeClientPersistence();
 
         setupConnectOptions();
@@ -264,6 +269,7 @@ public class MqttConnector
      */
     private void setupConnectOptions()
     {
+        connectOptions = new MqttConnectOptions();
         connectOptions.setCleanSession(isCleanSession());
         connectOptions.setConnectionTimeout(getConnectionTimeout());
         connectOptions.setKeepAliveInterval(getKeepAliveInterval());
@@ -308,7 +314,7 @@ public class MqttConnector
     @ConnectionIdentifier
     public String getClientId()
     {
-        return client.getClientId();
+        return clientId;
     }
 
     /**
@@ -413,30 +419,20 @@ public class MqttConnector
 
         Validate.notEmpty(actualSubscriptions, "No topic filter has been defined to subscribe to");
 
-        final String[] topicFilters = new String[actualSubscriptions.size()];
-        final int[] qoss = new int[actualSubscriptions.size()];
-        int i = 0;
-        for (final MqttTopicSubscription actualSubscription : actualSubscriptions)
-        {
-            topicFilters[i] = actualSubscription.getTopicFilter();
-            qoss[i] = actualSubscription.getQos().getCode();
-            i++;
-        }
-
-        try
-        {
-            client.setCallback(new MqttTopicListener(this, callback));
-            client.subscribe(topicFilters, qoss);
-        }
-        catch (final MqttException me)
-        {
-            throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, null, "Subscription Error", me);
-        }
-
-        LOGGER.info("Subscribed to: " + actualSubscriptions);
+        new MqttTopicListener(this, callback, actualSubscriptions).connect();
     }
 
     // Getters and Setters
+    public MuleContext getMuleContext()
+    {
+        return muleContext;
+    }
+
+    public void setMuleContext(final MuleContext muleContext)
+    {
+        this.muleContext = muleContext;
+    }
+
     public MqttClient getMqttClient()
     {
         return client;
