@@ -13,7 +13,7 @@ TESTING
 
 To run the integration tests on the default local [Mosquitto][mosquitto] setup, use:
 
-    mvn -Pit verify
+    mvn -Pit clean verify
 
 QUICK START
 ===========
