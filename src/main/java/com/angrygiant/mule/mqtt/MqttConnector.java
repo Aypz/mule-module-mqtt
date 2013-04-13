@@ -413,7 +413,7 @@ public class MqttConnector implements MuleContextAware
         {
             for (final Object o : topicSubscriptions)
             {
-                // FIXME why is DevKit passing a MqttTopicSubscriptionExpressionHolder ?
+                // FIXME DEVKIT-351 why is DevKit passing a MqttTopicSubscriptionExpressionHolder?
                 final MqttTopicSubscriptionExpressionHolder holder = (MqttTopicSubscriptionExpressionHolder) o;
 
                 if (holder.getTopicFilter() != null)
