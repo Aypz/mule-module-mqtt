@@ -29,3 +29,12 @@
 <mqtt:subscribe topicFilter="test/topic" />
 <!-- END_INCLUDE(mqtt:subscribe-1) -->
 
+<!-- BEGIN_INCLUDE(mqtt:subscribe-2) -->
+<!-- Subscribe to multiple topic filters -->
+<mqtt:subscribe topicFilter="test/topic">
+    <mqtt:topic-subscriptions>
+        <mqtt:topic-subscription topicFilter="test/topic" />
+        <mqtt:topic-subscription topicFilter="test/other" qos="FIRE_AND_FORGET" />
+    </mqtt:topic-subscriptions>
+</mqtt:subscribe>
+<!-- END_INCLUDE(mqtt:subscribe-2) -->
