@@ -1,8 +1,31 @@
-<!-- BEGIN_INCLUDE(mqtt:publish) -->
-<mqtt:publish topicName="test/publish" message="my message as a string" qos="1" />
-<!-- END_INCLUDE(mqtt:publish) -->
-<!-- BEGIN_INCLUDE(mqtt:subscribe) -->
-<mqtt:subscribe topicName="test/subscribe" qos="0" />
+<!-- BEGIN_INCLUDE(mqtt:config-1) -->
+<!-- Simple configuration with no reconnection strategy configured -->
+<mqtt:config clientId="muleClient">
+<!-- END_INCLUDE(mqtt:config-1) -->
 
-<mqtt:subscribe filter="test/#" qos="2" />
-<!-- END_INCLUDE(mqtt:subscribe) -->
+<!-- BEGIN_INCLUDE(mqtt:config-2) -->
+<!-- Configuration with reconnection strategy configured for both subscribe and publish -->
+<configuration>
+    <reconnect-forever frequency="5000" />
+</configuration>
+
+<mqtt:config name="muleClient" clientId="muleClient">
+    <reconnect-forever frequency="5000" />
+</mqtt:config>
+<!-- END_INCLUDE(mqtt:config-2) -->
+
+<!-- BEGIN_INCLUDE(mqtt:publish-1) -->
+<!-- Publish a message with the default QoS -->
+<mqtt:publish topicName="test/topic" />
+<!-- END_INCLUDE(mqtt:publish-1) -->
+
+<!-- BEGIN_INCLUDE(mqtt:publish-2) -->
+<!-- Publish a message with fire-and-forget QoS (ie. 0) -->
+<mqtt:publish topicName="test/topic" qos="FIRE_AND_FORGET" />
+<!-- END_INCLUDE(mqtt:publish-2) -->
+
+<!-- BEGIN_INCLUDE(mqtt:subscribe-1) -->
+<!-- Subscribe to a topic filter with the default QoS -->
+<mqtt:subscribe topicFilter="test/topic" />
+<!-- END_INCLUDE(mqtt:subscribe-1) -->
+

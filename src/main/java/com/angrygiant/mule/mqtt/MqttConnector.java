@@ -47,6 +47,10 @@ import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
 /**
  * Mule MQTT Module
  * <p/>
+ * {@sample.config ../../../doc/mqtt-connector.xml.sample mqtt:config-1}
+ * <p/>
+ * {@sample.config ../../../doc/mqtt-connector.xml.sample mqtt:config-2}
+ * <p/>
  * Copyright (c) MuleSoft, Inc. All rights reserved. http://www.mulesoft.com
  * <p/>
  * <p>
@@ -318,16 +322,21 @@ public class MqttConnector implements MuleContextAware
     }
 
     /**
-     * Publish a message to a topic.
+     * Publish a message to a topic. If sucessful a flow variable named
+     * {@link MqttConnector#MQTT_DELIVERY_TOKEN_VARIABLE} will contain the {@link MqttDeliveryToken}
+     * that can be used for further awaiting completion.
      * <p/>
-     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:publish}
+     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:publish-1}
+     * <p/>
+     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:publish-2}
      * 
      * @param topicName topic to publish message to.
      * @param waitForCompletionTimeOut time in milliseconds to wait for the delivery to occur.
-     * @param qos qos level to use when publishing message.
+     * @param qos QoS level to use when publishing message.
      * @param messagePayload the payload that will be published over MQTT.
-     * @return the {@link MqttDeliveryToken}, that contains a reference to the delivered
-     *         {@link MqttMessage}.
+     * @param muleEvent the in-flight {@link MuleEvent}.
+     * @return the <code>byte[]</code> that was published.
+     * @throws MqttException thrown if the MQTT publish fails.
      */
     @Processor
     @Inject
@@ -376,16 +385,17 @@ public class MqttConnector implements MuleContextAware
     }
 
     /**
-     * Subscribe to a topic.
+     * Subscribe to a single or multiple topic filters.
      * <p/>
-     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:subscribe}
+     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:subscribe-1}
+     * <p/>
+     * {@sample.xml ../../../doc/mqtt-connector.xml.sample mqtt:subscribe-2}
      * 
-     * @param topicName topic to publish message to
-     * @param filter topic filter string, comma delimited if multiple (takes precedence over topic
-     *            name)
-     * @param qos qos level to use when publishing message
-     * @param callback qos level to use when publishing message
-     * @return
+     * @param topicFilter single topic filter to subscribe to.
+     * @param qos QoS level to use when subscribing to a single topic.
+     * @param topicSubscriptions a {@link List} of {@link MqttTopicSubscription} to subscribe to.
+     * @param callback the {@link SourceCallback} used by Mule to dispatch the received messages.
+     * @throws ConnectionException thrown if the MQTT subscribe fails.
      */
     @Source
     public void subscribe(@Optional final String topicFilter,
