@@ -411,9 +411,11 @@ public class MqttConnector implements MuleContextAware
         final List<MqttTopicSubscription> actualSubscriptions = new ArrayList<MqttTopicSubscription>();
         if (topicSubscriptions != null)
         {
-            for (final Object o : topicSubscriptions)
+            // FIXME remove this hack when DEVKIT-351 is fixed
+            @SuppressWarnings({"cast", "rawtypes"})
+            final List typelessTopicSubscriptions = (List) topicSubscriptions;
+            for (final Object o : typelessTopicSubscriptions)
             {
-                // FIXME DEVKIT-351 why is DevKit passing a MqttTopicSubscriptionExpressionHolder?
                 final MqttTopicSubscriptionExpressionHolder holder = (MqttTopicSubscriptionExpressionHolder) o;
 
                 if (holder.getTopicFilter() != null)
