@@ -69,15 +69,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Documentation for Mule MQTT Module." />
+  <meta name="description" content="Documentation for MQTT Connector." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  MqttModuleConfigDefinitionParser
+  ProcessInterceptor
 
 
-| Mule MQTT Module
+| MQTT Connector
 
 </title>
 <link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -120,7 +120,7 @@
   feedback_widget_options.color = "#2F74AE";
   feedback_widget_options.style = "question";
 
-  feedback_widget_options.tag = "Mule MQTT Module";
+  feedback_widget_options.tag = "MQTT Connector";
 
   feedback_widget_options.limit = "3";
 
@@ -133,7 +133,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Mule MQTT Module</span>
+      <span id="masthead-title">MQTT Connector</span>
     
     <ul id="header-tabs" class="">
     
@@ -205,26 +205,56 @@
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/package-summary.html">com.angrygiant.mule.mqtt</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapter/package-summary.html">com.angrygiant.mule.mqtt.adapter</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/package-summary.html">com.angrygiant.mule.mqtt.adapters</a></li>
-    <li class="selected api apilevel-">
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/agents/package-summary.html">com.angrygiant.mule.mqtt.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/basic/package-summary.html">com.angrygiant.mule.mqtt.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/callback/package-summary.html">com.angrygiant.mule.mqtt.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/config/package-summary.html">com.angrygiant.mule.mqtt.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/connection/package-summary.html">com.angrygiant.mule.mqtt.connection</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/connectivity/package-summary.html">com.angrygiant.mule.mqtt.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/devkit/package-summary.html">com.angrygiant.mule.mqtt.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/holders/package-summary.html">com.angrygiant.mule.mqtt.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/oauth/package-summary.html">com.angrygiant.mule.mqtt.oauth</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/package-summary.html">com.angrygiant.mule.mqtt.process</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/processors/package-summary.html">com.angrygiant.mule.mqtt.processors</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/sources/package-summary.html">com.angrygiant.mule.mqtt.sources</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/transformers/package-summary.html">com.angrygiant.mule.mqtt.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
           <div id="classes-nav">
             <ul>
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessAdapter.html">ProcessAdapter</a>&lt;O&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt;</li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessInterceptor.html">ProcessInterceptor</a>&lt;T,&nbsp;O&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessTemplate.html">ProcessTemplate</a>&lt;T,&nbsp;O&gt;</li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/config/MqttModuleConfigDefinitionParser.html">MqttModuleConfigDefinitionParser</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/config/MqttModuleNamespaceHandler.html">MqttModuleNamespaceHandler</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/config/PublishDefinitionParser.html">PublishDefinitionParser</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/config/SubscribeDefinitionParser.html">SubscribeDefinitionParser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ManagedConnectionProcessInterceptor.html">ManagedConnectionProcessInterceptor</a>&lt;T&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/NestedProcessorChain.html">NestedProcessorChain</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallbackProcessInterceptor.html">ProcessCallbackProcessInterceptor</a>&lt;T,&nbsp;O&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/RetryProcessInterceptor.html">RetryProcessInterceptor</a>&lt;T,&nbsp;O&gt;</li>
       </ul>
     </li>
               
@@ -268,20 +298,6 @@
 
 
 
-  
-   
-  
-  
-  
-  
-
-  
-   
-  
-  
-  
-  
-
 
 <div class="sum-details-links">
 
@@ -294,22 +310,14 @@ Summary:
 
 
 
-  <a href="#lfields">Fields</a>
+
+
+
+
+  <a href="#pubmethods">Methods</a>
   
 
 
-
-  &#124; <a href="#pubctors">Ctors</a>
-  
-
-
-
-  &#124; <a href="#pubmethods">Methods</a>
-  
-
-
-
-  &#124; <a href="#inhmethods">Inherited Methods</a>
 
 &#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
 
@@ -332,23 +340,12 @@ Summary:
      
      
     
-    class
-<h1>MqttModuleConfigDefinitionParser</h1>
+    interface
+<h1>ProcessInterceptor</h1>
 
 
 
   
-    extends <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a><br/>
-  
-  
-  
-
-  
-  
-      implements 
-      
-        BeanDefinitionParser 
-      
   
   
 
@@ -363,15 +360,7 @@ Summary:
 
     <tr>
         
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a></td>
-    </tr>
-    
-
-    <tr>
-        
-            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
-        
-        <td colspan="1" class="jd-inheritance-class-cell">com.angrygiant.mule.mqtt.config.MqttModuleConfigDefinitionParser</td>
+        <td colspan="1" class="jd-inheritance-class-cell">com.angrygiant.mule.mqtt.process.ProcessInterceptor&lt;T,&nbsp;O&gt;</td>
     </tr>
     
 
@@ -381,6 +370,49 @@ Summary:
 
 
 
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-indirect" class="jd-expando-trigger closed"
+          ><img id="subclasses-indirect-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Indirect Subclasses
+
+  <div id="subclasses-indirect">
+      <div id="subclasses-indirect-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ManagedConnectionProcessInterceptor.html">ManagedConnectionProcessInterceptor</a>&lt;T&gt;,
+            
+              <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallbackProcessInterceptor.html">ProcessCallbackProcessInterceptor</a>&lt;T,&nbsp;O&gt;,
+            
+              <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/RetryProcessInterceptor.html">RetryProcessInterceptor</a>&lt;T,&nbsp;O&gt;
+            
+          
+      </div>
+      <div id="subclasses-indirect-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ManagedConnectionProcessInterceptor.html">ManagedConnectionProcessInterceptor</a>&lt;T&gt;</td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallbackProcessInterceptor.html">ProcessCallbackProcessInterceptor</a>&lt;T,&nbsp;O&gt;</td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/angrygiant/mule/mqtt/process/RetryProcessInterceptor.html">RetryProcessInterceptor</a>&lt;T,&nbsp;O&gt;</td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
 
 
 <div class="jd-descr">
@@ -429,56 +461,9 @@ Summary:
 
 
 
-<!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
-
-
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          TemplateParser.PatternInfo</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/config/MqttModuleConfigDefinitionParser.html#patternInfo">patternInfo</a></td>
-          <td class="jd-descrcol" width="100%">Mule Pattern Info
- 
-</td>
-      </tr>
-      
-    
-
-</table>
 
 
 
-
-
-
-
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
-
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/config/MqttModuleConfigDefinitionParser.html#MqttModuleConfigDefinitionParser()">MqttModuleConfigDefinitionParser</a></span>()</nobr>
-        
-  </td></tr>
-
-
-
-</table>
 
 
 
@@ -493,278 +478,42 @@ Summary:
 	 
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
+            abstract
             
             
             
             
-            
-            BeanDefinition</nobr>
+            T</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/config/MqttModuleConfigDefinitionParser.html#parse(org.w3c.dom.Element, org.springframework.beans.factory.xml.ParserContext)">parse</a></span>(Element element, ParserContext parserContent)</nobr>
-        
-  </td></tr>
-
-
-
-</table>
-
-
-
-
-
-
-
-<!-- ========== METHOD SUMMARY =========== -->
-<table id="inhmethods" class="jd-sumtable"><tr><th>
-  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
-  <div style="clear:left;">Inherited Methods</div></th></tr>
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-java.lang.Object-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From class
-
-  <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a>
-
-<div id="inherited-methods-java.lang.Object">
-  <div id="inherited-methods-java.lang.Object-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">clone</span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/process/ProcessInterceptor.html#execute(com.angrygiant.mule.mqtt.process.ProcessCallback<T, O>, O, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)">execute</a></span>(<a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, O under, MessageProcessor messageProcessor, MuleEvent event)</nobr>
         
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">equals</span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a> arg0)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">finalize</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Class.html">Class</a>&lt;?&gt;</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getClass</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">hashCode</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">notify</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">notifyAll</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">toString</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>(long arg0)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.springframework.beans.factory.xml.BeanDefinitionParser" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.springframework.beans.factory.xml.BeanDefinitionParser-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  org.springframework.beans.factory.xml.BeanDefinitionParser
-
-<div id="inherited-methods-org.springframework.beans.factory.xml.BeanDefinitionParser">
-  <div id="inherited-methods-org.springframework.beans.factory.xml.BeanDefinitionParser-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-org.springframework.beans.factory.xml.BeanDefinitionParser-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
             
             
             
-            BeanDefinition</nobr>
+            T</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">parse</span>(Element arg0, ParserContext arg1)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/process/ProcessInterceptor.html#execute(com.angrygiant.mule.mqtt.process.ProcessCallback<T, O>, O, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)">execute</a></span>(<a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, O under, Filter filter, MuleMessage message)</nobr>
         
   </td></tr>
 
 
-</table>
-  </div>
-</div>
-</td></tr>
-
 
 </table>
+
+
+
+
+
 
 
 </div><!-- jd-descr (summary) -->
@@ -790,84 +539,7 @@ From interface
 <!-- Fields -->
 
 
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
-
-
-
-
-<A NAME="patternInfo"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        TemplateParser.PatternInfo
-      </span>
-        patternInfo
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Mule Pattern Info
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-
 <!-- Public ctors -->
-
-
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
-
-
-
-<A NAME="MqttModuleConfigDefinitionParser()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">MqttModuleConfigDefinitionParser</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
 
 
 
@@ -883,7 +555,7 @@ From interface
 
 
 
-<A NAME="parse(org.w3c.dom.Element, org.springframework.beans.factory.xml.ParserContext)"></A>
+<A NAME="execute(com.angrygiant.mule.mqtt.process.ProcessCallback<T, O>, O, org.mule.api.processor.MessageProcessor, org.mule.api.MuleEvent)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -891,12 +563,12 @@ From interface
         public 
          
          
+        abstract 
          
-         
-        BeanDefinition
+        T
       </span>
-      <span class="sympad">parse</span>
-      <span class="normal">(Element element, ParserContext parserContent)</span>
+      <span class="sympad">execute</span>
+      <span class="normal">(<a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, O under, MessageProcessor messageProcessor, MuleEvent event)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -913,12 +585,90 @@ From interface
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>element</td>
+          <th>callback</td>
           <td></td>
         </tr>
         <tr>
-          <th>parserContent</td>
+          <th>under</td>
           <td></td>
+        </tr>
+        <tr>
+          <th>messageProcessor</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>event</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Exception</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="execute(com.angrygiant.mule.mqtt.process.ProcessCallback<T, O>, O, org.mule.api.routing.filter.Filter, org.mule.api.MuleMessage)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        T
+      </span>
+      <span class="sympad">execute</span>
+      <span class="normal">(<a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessCallback.html">ProcessCallback</a>&lt;T,&nbsp;O&gt; callback, O under, Filter filter, MuleMessage message)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>under</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>filter</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>message</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Exception</td>
+            <td></td>
         </tr>
       </table>
   </div>

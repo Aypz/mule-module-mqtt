@@ -1,6 +1,17 @@
 com.angrygiant.mule.mqtt
+com.angrygiant.mule.mqtt.adapter
 com.angrygiant.mule.mqtt.adapters
+com.angrygiant.mule.mqtt.agents
+com.angrygiant.mule.mqtt.basic
+com.angrygiant.mule.mqtt.callback
 com.angrygiant.mule.mqtt.config
+com.angrygiant.mule.mqtt.connection
+com.angrygiant.mule.mqtt.connectivity
+com.angrygiant.mule.mqtt.devkit
+com.angrygiant.mule.mqtt.holders
+com.angrygiant.mule.mqtt.oauth
+com.angrygiant.mule.mqtt.process
 com.angrygiant.mule.mqtt.processors
 com.angrygiant.mule.mqtt.sources
+com.angrygiant.mule.mqtt.transformers
 

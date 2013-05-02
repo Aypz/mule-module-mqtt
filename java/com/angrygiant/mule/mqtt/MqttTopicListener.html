@@ -69,7 +69,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Documentation for Mule MQTT Module." />
+  <meta name="description" content="Documentation for MQTT Connector." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -77,7 +77,7 @@
   MqttTopicListener
 
 
-| Mule MQTT Module
+| MQTT Connector
 
 </title>
 <link href="../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -120,7 +120,7 @@
   feedback_widget_options.color = "#2F74AE";
   feedback_widget_options.style = "question";
 
-  feedback_widget_options.tag = "Mule MQTT Module";
+  feedback_widget_options.tag = "MQTT Connector";
 
   feedback_widget_options.limit = "3";
 
@@ -133,7 +133,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Mule MQTT Module</span>
+      <span id="masthead-title">MQTT Connector</span>
     
     <ul id="header-tabs" class="">
     
@@ -205,13 +205,35 @@
     <li class="selected api apilevel-">
   <a href="../../../../../java/com/angrygiant/mule/mqtt/package-summary.html">com.angrygiant.mule.mqtt</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/adapter/package-summary.html">com.angrygiant.mule.mqtt.adapter</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../java/com/angrygiant/mule/mqtt/adapters/package-summary.html">com.angrygiant.mule.mqtt.adapters</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/agents/package-summary.html">com.angrygiant.mule.mqtt.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/basic/package-summary.html">com.angrygiant.mule.mqtt.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/callback/package-summary.html">com.angrygiant.mule.mqtt.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../java/com/angrygiant/mule/mqtt/config/package-summary.html">com.angrygiant.mule.mqtt.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/connection/package-summary.html">com.angrygiant.mule.mqtt.connection</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/connectivity/package-summary.html">com.angrygiant.mule.mqtt.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/devkit/package-summary.html">com.angrygiant.mule.mqtt.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/holders/package-summary.html">com.angrygiant.mule.mqtt.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/oauth/package-summary.html">com.angrygiant.mule.mqtt.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/process/package-summary.html">com.angrygiant.mule.mqtt.process</a></li>
     <li class="api apilevel-">
   <a href="../../../../../java/com/angrygiant/mule/mqtt/processors/package-summary.html">com.angrygiant.mule.mqtt.processors</a></li>
     <li class="api apilevel-">
   <a href="../../../../../java/com/angrygiant/mule/mqtt/sources/package-summary.html">com.angrygiant.mule.mqtt.sources</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/angrygiant/mule/mqtt/transformers/package-summary.html">com.angrygiant.mule.mqtt.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -221,12 +243,18 @@
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../../java/com/angrygiant/mule/mqtt/MqttModule.html">MqttModule</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a></li>
           <li class="selected api apilevel-"><a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicListener.html">MqttTopicListener</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a></li>
       </ul>
     </li>
               
               
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.DeliveryQoS.html">MqttConnector.DeliveryQoS</a></li>
+      </ul>
+    </li>
               
               
             </ul><br/>
@@ -290,12 +318,9 @@ Summary:
 
 
 
-  <a href="#constants">Constants</a>
-  
 
 
-
-  &#124; <a href="#lfields">Fields</a>
+  <a href="#lfields">Fields</a>
   
 
 
@@ -339,7 +364,7 @@ Summary:
 
 
   
-    extends <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a><br/>
+    extends Object<br/>
   
   
   
@@ -364,7 +389,7 @@ Summary:
 
     <tr>
         
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a></td>
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -390,21 +415,18 @@ Summary:
 <h2>Class Overview</h2>
 <p>Mule MQTT Module
  <p/>
- Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+ Copyright (c) MuleSoft, Inc. All rights reserved. http://www.mulesoft.com
  <p/>
  <p>
- The software in this package is published under the terms of the CPAL v1.0
- license, a copy of which has been included with this distribution in the
- LICENSE.md file.
+ The software in this package is published under the terms of the CPAL v1.0 license, a copy of
+ which has been included with this distribution in the LICENSE.md file.
  </p>
  <p>
- Created with IntelliJ IDEA.
- User: dmiller@angrygiant.com
- Date: 9/21/12
- Time: 9:57 AM
+ Created with IntelliJ IDEA. User: dmiller@angrygiant.com Date: 9/21/12 Time: 9:57 AM
  </p>
  <p>
- TopicListener is responsible for initiating and holding a connection to the MQTT broker for topic subscription.
+ TopicListener is responsible for initiating and holding a connection to the MQTT broker for topic
+ subscription.
  </p></p>
 
 
@@ -445,57 +467,6 @@ Summary:
 
 
 
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#CLIENT_ID">CLIENT_ID</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#CLIENT_URI">CLIENT_URI</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MESSAGE_DUPLICATE">MESSAGE_DUPLICATE</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MESSAGE_QOS">MESSAGE_QOS</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MESSAGE_RETAIN">MESSAGE_RETAIN</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#TOPIC_NAME">TOPIC_NAME</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-
-</table>
-
-
 
 
 
@@ -509,6 +480,17 @@ Summary:
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
+          static
+          final
+          Log</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#LOGGER">LOGGER</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
           
           final
           SourceCallback</nobr></td>
@@ -517,46 +499,13 @@ Summary:
       </tr>
       
     
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          final
-          MqttClient</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#client">client</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           final
-          MqttConnectOptions</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#connectOptions">connectOptions</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          static
-          final
-          Logger</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#logger">logger</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#qos">qos</a></td>
+          <a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#connector">connector</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -565,20 +514,9 @@ Summary:
           <td class="jd-typecol"><nobr>
           private
           
-          
-          long</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#subscriptionDelay">subscriptionDelay</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#topicName">topicName</a></td>
+          final
+          List&lt;<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a>&gt;</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#subscriptions">subscriptions</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -608,23 +546,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MqttTopicListener(org.eclipse.paho.client.mqttv3.MqttClient, org.mule.api.callback.SourceCallback, java.lang.String, org.eclipse.paho.client.mqttv3.MqttConnectOptions, long)">MqttTopicListener</a></span>(MqttClient client, SourceCallback callback, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, MqttConnectOptions connectOptions, long subscriptionDelay)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MqttTopicListener(org.eclipse.paho.client.mqttv3.MqttClient, org.mule.api.callback.SourceCallback, java.lang.String, org.eclipse.paho.client.mqttv3.MqttConnectOptions, long, int)">MqttTopicListener</a></span>(MqttClient client, SourceCallback callback, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, MqttConnectOptions connectOptions, long subscriptionDelay, int qos)</nobr>
+        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#MqttTopicListener(com.angrygiant.mule.mqtt.MqttConnector, org.mule.api.callback.SourceCallback, java.util.List<com.angrygiant.mule.mqtt.MqttTopicSubscription>)">MqttTopicListener</a></span>(<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a> connector, SourceCallback callback, List&lt;<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a>&gt; subscriptions)</nobr>
         
   </td></tr>
 
@@ -653,7 +575,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#connectionLost(java.lang.Throwable)">connectionLost</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Throwable.html">Throwable</a> throwable)</nobr>
+        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#connect()">connect</a></span>()</nobr>
         
   </td></tr>
 
@@ -669,13 +591,29 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#deliveryComplete(org.eclipse.paho.client.mqttv3.MqttDeliveryToken)">deliveryComplete</a></span>(MqttDeliveryToken mqttDeliveryToken)</nobr>
+        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#connectionLost(java.lang.Throwable)">connectionLost</a></span>(Throwable throwable)</nobr>
         
   </td></tr>
 
 
 	 
     <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/angrygiant/mule/mqtt/MqttTopicListener.html#deliveryComplete(org.eclipse.paho.client.mqttv3.MqttDeliveryToken)">deliveryComplete</a></span>(MqttDeliveryToken mqttDeliveryToken)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -713,7 +651,7 @@ Summary:
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a>
+  java.lang.Object
 
 <div id="inherited-methods-java.lang.Object">
   <div id="inherited-methods-java.lang.Object-list"
@@ -732,7 +670,7 @@ From class
             
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a></nobr>
+            Object</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">clone</span>()</nobr>
@@ -751,7 +689,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">equals</span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a> arg0)</nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
         
   </td></tr>
 
@@ -780,7 +718,7 @@ From class
             final
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Class.html">Class</a>&lt;?&gt;</nobr>
+            Class&lt;?&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">getClass</span>()</nobr>
@@ -844,7 +782,7 @@ From class
             
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
+            String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">toString</span>()</nobr>
@@ -937,7 +875,7 @@ From interface
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">connectionLost</span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Throwable.html">Throwable</a> arg0)</nobr>
+        <span class="sympad">connectionLost</span>(Throwable arg0)</nobr>
         
   </td></tr>
 
@@ -1003,253 +941,42 @@ From interface
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="CLIENT_ID"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        CLIENT_ID
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.client.id"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="CLIENT_URI"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        CLIENT_URI
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.client.serverUri"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="MESSAGE_DUPLICATE"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        MESSAGE_DUPLICATE
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.message.duplicated"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="MESSAGE_QOS"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        MESSAGE_QOS
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.message.qos"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="MESSAGE_RETAIN"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        MESSAGE_RETAIN
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.message.retained"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="TOPIC_NAME"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        TOPIC_NAME
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mqtt.topic.name"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
 <!-- ========= FIELD DETAIL ======== -->
 <h2>Fields</h2>
 
+
+
+
+<A NAME="LOGGER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        Log
+      </span>
+        LOGGER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
 
 
 
@@ -1283,7 +1010,7 @@ From interface
 
 
 
-<A NAME="client"></A>
+<A NAME="connector"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1291,9 +1018,9 @@ From interface
         private 
          
         final 
-        MqttClient
+        <a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a>
       </span>
-        client
+        connector
     </h4>
       <div class="api-level">
         
@@ -1313,7 +1040,7 @@ From interface
 
 
 
-<A NAME="connectOptions"></A>
+<A NAME="subscriptions"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1321,129 +1048,9 @@ From interface
         private 
          
         final 
-        MqttConnectOptions
+        List&lt;<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a>&gt;
       </span>
-        connectOptions
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="logger"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-        static 
-        final 
-        Logger
-      </span>
-        logger
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="qos"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        int
-      </span>
-        qos
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="subscriptionDelay"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        long
-      </span>
-        subscriptionDelay
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="topicName"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
-      </span>
-        topicName
+        subscriptions
     </h4>
       <div class="api-level">
         
@@ -1472,7 +1079,7 @@ From interface
 
 
 
-<A NAME="MqttTopicListener(org.eclipse.paho.client.mqttv3.MqttClient, org.mule.api.callback.SourceCallback, java.lang.String, org.eclipse.paho.client.mqttv3.MqttConnectOptions, long)"></A>
+<A NAME="MqttTopicListener(com.angrygiant.mule.mqtt.MqttConnector, org.mule.api.callback.SourceCallback, java.util.List<com.angrygiant.mule.mqtt.MqttTopicSubscription>)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1485,7 +1092,7 @@ From interface
         
       </span>
       <span class="sympad">MqttTopicListener</span>
-      <span class="normal">(MqttClient client, SourceCallback callback, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, MqttConnectOptions connectOptions, long subscriptionDelay)</span>
+      <span class="normal">(<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a> connector, SourceCallback callback, List&lt;<a href="../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a>&gt; subscriptions)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1502,7 +1109,7 @@ From interface
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>client</td>
+          <th>connector</td>
           <td></td>
         </tr>
         <tr>
@@ -1510,75 +1117,7 @@ From interface
           <td></td>
         </tr>
         <tr>
-          <th>topicName</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>connectOptions</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>subscriptionDelay</td>
-          <td></td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="MqttTopicListener(org.eclipse.paho.client.mqttv3.MqttClient, org.mule.api.callback.SourceCallback, java.lang.String, org.eclipse.paho.client.mqttv3.MqttConnectOptions, long, int)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">MqttTopicListener</span>
-      <span class="normal">(MqttClient client, SourceCallback callback, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, MqttConnectOptions connectOptions, long subscriptionDelay, int qos)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>client</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>callback</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>topicName</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>connectOptions</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>subscriptionDelay</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>qos</td>
+          <th>subscriptions</td>
           <td></td>
         </tr>
       </table>
@@ -1603,6 +1142,46 @@ From interface
 
 
 
+<A NAME="connect()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">connect</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>ConnectionException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="connectionLost(java.lang.Throwable)"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -1616,7 +1195,7 @@ From interface
         void
       </span>
       <span class="sympad">connectionLost</span>
-      <span class="normal">(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Throwable.html">Throwable</a> throwable)</span>
+      <span class="normal">(Throwable throwable)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1726,7 +1305,7 @@ From interface
       <h5 class="jd-tagtitle">Throws</h5>
       <table class="jd-tagtable">  
         <tr>
-            <th><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Exception.html">Exception</a></td>
+            <th>Exception</td>
             <td></td>
         </tr>
       </table>

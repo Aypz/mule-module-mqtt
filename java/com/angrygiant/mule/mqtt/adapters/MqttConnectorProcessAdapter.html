@@ -69,15 +69,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Documentation for Mule MQTT Module." />
+  <meta name="description" content="Documentation for MQTT Connector." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  MqttModuleLifecycleAdapter
+  MqttConnectorProcessAdapter
 
 
-| Mule MQTT Module
+| MQTT Connector
 
 </title>
 <link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -120,7 +120,7 @@
   feedback_widget_options.color = "#2F74AE";
   feedback_widget_options.style = "question";
 
-  feedback_widget_options.tag = "Mule MQTT Module";
+  feedback_widget_options.tag = "MQTT Connector";
 
   feedback_widget_options.limit = "3";
 
@@ -133,7 +133,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Mule MQTT Module</span>
+      <span id="masthead-title">MQTT Connector</span>
     
     <ul id="header-tabs" class="">
     
@@ -204,14 +204,36 @@
                 
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/package-summary.html">com.angrygiant.mule.mqtt</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapter/package-summary.html">com.angrygiant.mule.mqtt.adapter</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/package-summary.html">com.angrygiant.mule.mqtt.adapters</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/agents/package-summary.html">com.angrygiant.mule.mqtt.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/basic/package-summary.html">com.angrygiant.mule.mqtt.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/callback/package-summary.html">com.angrygiant.mule.mqtt.callback</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/config/package-summary.html">com.angrygiant.mule.mqtt.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/connection/package-summary.html">com.angrygiant.mule.mqtt.connection</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/connectivity/package-summary.html">com.angrygiant.mule.mqtt.connectivity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/devkit/package-summary.html">com.angrygiant.mule.mqtt.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/holders/package-summary.html">com.angrygiant.mule.mqtt.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/oauth/package-summary.html">com.angrygiant.mule.mqtt.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/package-summary.html">com.angrygiant.mule.mqtt.process</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/processors/package-summary.html">com.angrygiant.mule.mqtt.processors</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../java/com/angrygiant/mule/mqtt/sources/package-summary.html">com.angrygiant.mule.mqtt.sources</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/angrygiant/mule/mqtt/transformers/package-summary.html">com.angrygiant.mule.mqtt.transformers</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -221,8 +243,11 @@
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttModuleCapabilitiesAdapter.html">MqttModuleCapabilitiesAdapter</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html">MqttModuleLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html">MqttConnectorCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorConnectionIdentifierAdapter.html">MqttConnectorConnectionIdentifierAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html">MqttConnectorLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html">MqttConnectorMetadataAdapater</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorProcessAdapter.html">MqttConnectorProcessAdapter</a></li>
       </ul>
     </li>
               
@@ -280,7 +305,44 @@
    
   
   
+  
+
+  
    
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
   
   
 
@@ -388,7 +450,7 @@ Summary:
      
     
     class
-<h1>MqttModuleLifecycleAdapter</h1>
+<h1>MqttConnectorProcessAdapter</h1>
 
 
 
@@ -401,7 +463,15 @@ Summary:
   
 
   
-    extends <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttModuleCapabilitiesAdapter.html">MqttModuleCapabilitiesAdapter</a><br/>
+  
+  
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html">MqttConnectorLifecycleAdapter</a><br/>
   
   
   
@@ -410,13 +480,7 @@ Summary:
   
       implements 
       
-        Disposable 
-      
-        Initialisable 
-      
-        Startable 
-      
-        Stoppable 
+        <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessAdapter.html">ProcessAdapter</a>&lt;O&gt; 
       
   
   
@@ -432,7 +496,7 @@ Summary:
 
     <tr>
         
-        <td colspan="4" class="jd-inheritance-class-cell"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a></td>
+        <td colspan="6" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -440,7 +504,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttModule.html">com.angrygiant.mule.mqtt.MqttModule</a></td>
+        <td colspan="5" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">com.angrygiant.mule.mqtt.MqttConnector</a></td>
     </tr>
     
 
@@ -450,7 +514,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttModuleCapabilitiesAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter</a></td>
+        <td colspan="4" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter</a></td>
     </tr>
     
 
@@ -462,7 +526,37 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">com.angrygiant.mule.mqtt.adapters.MqttModuleLifecycleAdapter</td>
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.angrygiant.mule.mqtt.adapters.MqttConnectorProcessAdapter</td>
     </tr>
     
 
@@ -471,6 +565,37 @@ Summary:
 
 
 
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-direct" class="jd-expando-trigger closed"
+          ><img id="subclasses-direct-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Direct Subclasses
+
+  <div id="subclasses-direct">
+      <div id="subclasses-direct-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorConnectionIdentifierAdapter.html">MqttConnectorConnectionIdentifierAdapter</a>
+            
+          
+      </div>
+      <div id="subclasses-direct-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorConnectionIdentifierAdapter.html">MqttConnectorConnectionIdentifierAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>MqttConnectorConnectionIdentifierAdapter</code> is a wrapper around <code><a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a></code> that implements org.mule.devkit.dynamic.api.helper.Connection interface.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
 
 
 
@@ -478,7 +603,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>A <code>MqttModuleLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttModule.html">MqttModule</a></code> that adds lifecycle methods to the pojo.
+<p>A <code>MqttConnectorProcessAdapter</code> is a wrapper around <code><a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.html">MqttConnector</a></code> that enables custom processing strategies.
  
 </p>
 
@@ -534,30 +659,44 @@ Summary:
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.angrygiant.mule.mqtt.MqttModule" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-com.angrygiant.mule.mqtt.MqttModule-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From class
-<a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html">com.angrygiant.mule.mqtt.MqttModule</a>
-<div id="inherited-constants-com.angrygiant.mule.mqtt.MqttModule">
-  <div id="inherited-constants-com.angrygiant.mule.mqtt.MqttModule-list"
+<a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater</a>
+<div id="inherited-constants-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater">
+  <div id="inherited-constants-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-constants-com.angrygiant.mule.mqtt.MqttModule-summary" style="display: none;">
+  <div id="inherited-constants-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#MQTT_DEFAULT_HOST">MQTT_DEFAULT_HOST</a></td>
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#DEVKIT_BUILD">DEVKIT_BUILD</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
     <tr class=" api apilevel-" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#MQTT_DEFAULT_PORT">MQTT_DEFAULT_PORT</a></td>
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#DEVKIT_VERSION">DEVKIT_VERSION</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#MODULE_NAME">MODULE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#MODULE_VERSION">MODULE_VERSION</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
@@ -566,6 +705,80 @@ Summary:
   </div>
 </div>
 </td></tr>
+
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.angrygiant.mule.mqtt.MqttConnector" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-com.angrygiant.mule.mqtt.MqttConnector-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html">com.angrygiant.mule.mqtt.MqttConnector</a>
+<div id="inherited-constants-com.angrygiant.mule.mqtt.MqttConnector">
+  <div id="inherited-constants-com.angrygiant.mule.mqtt.MqttConnector-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-com.angrygiant.mule.mqtt.MqttConnector-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_DEFAULT_BROKER_URI">MQTT_DEFAULT_BROKER_URI</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_DEFAULT_QOS_STRING">MQTT_DEFAULT_QOS_STRING</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_DELIVERY_TOKEN_VARIABLE">MQTT_DELIVERY_TOKEN_VARIABLE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_PROPERTIES_PREFIX">MQTT_PROPERTIES_PREFIX</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_QOS_PROPERTY">MQTT_QOS_PROPERTY</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_TOPIC_NAME_PROPERTY">MQTT_TOPIC_NAME_PROPERTY</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
 
 
 
@@ -591,7 +804,7 @@ org.mule.api.lifecycle.Disposable
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol">PHASE_NAME</td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
@@ -622,7 +835,7 @@ org.mule.api.lifecycle.Initialisable
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol">PHASE_NAME</td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
@@ -653,7 +866,7 @@ org.mule.api.lifecycle.Startable
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol">PHASE_NAME</td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
@@ -684,7 +897,7 @@ org.mule.api.lifecycle.Stoppable
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol">PHASE_NAME</td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
@@ -712,19 +925,23 @@ org.mule.api.lifecycle.Stoppable
 
 
 
+
+
+
+
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.angrygiant.mule.mqtt.MqttModule" class="jd-expando-trigger closed"
-          ><img id="inherited-fields-com.angrygiant.mule.mqtt.MqttModule-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.angrygiant.mule.mqtt.MqttConnector" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.angrygiant.mule.mqtt.MqttConnector-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From class
-<a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html">com.angrygiant.mule.mqtt.MqttModule</a>
-<div id="inherited-fields-com.angrygiant.mule.mqtt.MqttModule">
-  <div id="inherited-fields-com.angrygiant.mule.mqtt.MqttModule-list"
+<a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html">com.angrygiant.mule.mqtt.MqttConnector</a>
+<div id="inherited-fields-com.angrygiant.mule.mqtt.MqttConnector">
+  <div id="inherited-fields-com.angrygiant.mule.mqtt.MqttConnector-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-fields-com.angrygiant.mule.mqtt.MqttModule-summary" style="display: none;">
+  <div id="inherited-fields-com.angrygiant.mule.mqtt.MqttConnector-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -732,24 +949,22 @@ org.mule.api.lifecycle.Stoppable
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
-          
-          
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#brokerHostName">brokerHostName</a></td>
-          <td class="jd-descrcol" width="100%">Broker Host Name:  Host of the MQTT broker, defaults to 'localhost'
-</td>
+          static
+          final
+          Log</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#LOGGER">LOGGER</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
       <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
-          private
-          
-          
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#brokerPort">brokerPort</a></td>
-          <td class="jd-descrcol" width="100%">Broker port number, defaults to 1883
-</td>
+          public
+          static
+          final
+          <a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.DeliveryQoS.html">MqttConnector.DeliveryQoS</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_DEFAULT_QOS">MQTT_DEFAULT_QOS</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -758,79 +973,52 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          boolean</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#cleanSession">cleanSession</a></td>
-          <td class="jd-descrcol" width="100%">Clean Session - refer to Eclipse Paho documentation
-</td>
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#brokerServerUri">brokerServerUri</a></td>
+          <td class="jd-descrcol" width="100%">MQTT broker server URI.</td>
       </tr>
       
     
       <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#cleanSession">cleanSession</a></td>
+          <td class="jd-descrcol" width="100%">Clean Session.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           
           MqttClient</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#client">client</a></td>
-          <td class="jd-descrcol" width="100%">Private variables not used by Mule directly
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#clientId">clientId</a></td>
-          <td class="jd-descrcol" width="100%">Client ID (required): client identifier for the broker
-</td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#client">client</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
       <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#clientId">clientId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           
           MqttConnectOptions</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#connectOptions">connectOptions</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#connectionTimeout">connectionTimeout</a></td>
-          <td class="jd-descrcol" width="100%">Connection Timeout - refer to Eclipse Paho documentation
-</td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#keepAliveInterval">keepAliveInterval</a></td>
-          <td class="jd-descrcol" width="100%">Keep Alive Interval - refer to Eclipse Paho documentation
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          static
-          final
-          Logger</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#logger">logger</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#connectOptions">connectOptions</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -840,10 +1028,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#lwtMessage">lwtMessage</a></td>
-          <td class="jd-descrcol" width="100%">Last Will and Testimate Message - refer to Eclipse Paho documentation
-</td>
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#connectionTimeout">connectionTimeout</a></td>
+          <td class="jd-descrcol" width="100%">Connection Timeout.</td>
       </tr>
       
     
@@ -853,9 +1040,30 @@ org.mule.api.lifecycle.Stoppable
           
           
           int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#lwtQos">lwtQos</a></td>
-          <td class="jd-descrcol" width="100%">Last Will and Testimate QOS - refer to Eclipse Paho documentation
-</td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#keepAliveInterval">keepAliveInterval</a></td>
+          <td class="jd-descrcol" width="100%">Keep-alive interval.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#lwtMessage">lwtMessage</a></td>
+          <td class="jd-descrcol" width="100%">Last Will and Testimate message.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#lwtQos">lwtQos</a></td>
+          <td class="jd-descrcol" width="100%">Last Will and Testimate QOS.</td>
       </tr>
       
     
@@ -865,9 +1073,8 @@ org.mule.api.lifecycle.Stoppable
           
           
           boolean</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#lwtRetained">lwtRetained</a></td>
-          <td class="jd-descrcol" width="100%">Last Will and Testimate Retention - refer to Eclipse Paho documentation
-</td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#lwtRetained">lwtRetained</a></td>
+          <td class="jd-descrcol" width="100%">Last Will and Testimate retention.</td>
       </tr>
       
     
@@ -876,9 +1083,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#lwtTopicName">lwtTopicName</a></td>
-          <td class="jd-descrcol" width="100%">Last Will and Testimate Topic - refer to Eclipse Paho documentation
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#lwtTopicName">lwtTopicName</a></td>
+          <td class="jd-descrcol" width="100%">Last Will and Testimate Topic
 </td>
       </tr>
       
@@ -888,10 +1095,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#password">password</a></td>
-          <td class="jd-descrcol" width="100%">Password to log into broker with
-</td>
+          MuleContext</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#muleContext">muleContext</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -900,9 +1106,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#persistenceLocation">persistenceLocation</a></td>
-          <td class="jd-descrcol" width="100%">File Persistence Location - directory on the machine where message persistence can be stored to disk.</td>
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#password">password</a></td>
+          <td class="jd-descrcol" width="100%">Password to log into broker with.</td>
       </tr>
       
     
@@ -911,9 +1117,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          long</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#subscriptionDelay">subscriptionDelay</a></td>
-          <td class="jd-descrcol" width="100%">Milliseconds of delay before subscription to a topic occurs.</td>
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#persistenceLocation">persistenceLocation</a></td>
+          <td class="jd-descrcol" width="100%">Directory on the machine where message persistence can be stored to disk.</td>
       </tr>
       
     
@@ -922,10 +1128,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#username">username</a></td>
-          <td class="jd-descrcol" width="100%">Username to log into broker with
-</td>
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#username">username</a></td>
+          <td class="jd-descrcol" width="100%">Username to log into broker with.</td>
       </tr>
       
     
@@ -933,6 +1138,12 @@ org.mule.api.lifecycle.Stoppable
   </div>
 </div>
 </td></tr>
+
+
+
+
+
+
 
 
 
@@ -968,7 +1179,7 @@ org.mule.api.lifecycle.Stoppable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html#MqttModuleLifecycleAdapter()">MqttModuleLifecycleAdapter</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorProcessAdapter.html#MqttConnectorProcessAdapter()">MqttConnectorProcessAdapter</a></span>()</nobr>
         
   </td></tr>
 
@@ -993,59 +1204,11 @@ org.mule.api.lifecycle.Stoppable
             
             
             
-            
-            void</nobr>
+            &lt;P&gt;
+            <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessTemplate.html">ProcessTemplate</a>&lt;P,&nbsp;<a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html">MqttConnectorCapabilitiesAdapter</a>&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html#dispose()">dispose</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html#initialise()">initialise</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html#start()">start</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleLifecycleAdapter.html#stop()">stop</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorProcessAdapter.html#getProcessTemplate()">getProcessTemplate</a></span>()</nobr>
         
   </td></tr>
 
@@ -1067,19 +1230,211 @@ org.mule.api.lifecycle.Stoppable
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleCapabilitiesAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter</a>
+  <a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter</a>
 
-<div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter">
-  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter-list"
+<div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttModuleCapabilitiesAdapter-summary" style="display: none;">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorLifecycleAdapter-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html#dispose()">dispose</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html#initialise()">initialise</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html#start()">start</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorLifecycleAdapter.html#stop()">stop</a></span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater</a>
+
+<div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorMetadataAdapater-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the build of the DevKit used to create this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the version of the DevKit used to create this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#getModuleName()">getModuleName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the user-friendly name of this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorMetadataAdapater.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the version of this module
+</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html">com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter</a>
+
+<div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.adapters.MqttConnectorCapabilitiesAdapter-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -1095,7 +1450,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttModuleCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html#isCapableOf(com.angrygiant.mule.mqtt.basic.Capability)">isCapableOf</a></span>(<a href="../../../../../../java/com/angrygiant/mule/mqtt/basic/Capability.html">Capability</a> capability)</nobr>
         
         <div class="jd-descrdiv">Returns true if this module implements such capability
  
@@ -1113,213 +1468,21 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.MqttModule" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-com.angrygiant.mule.mqtt.MqttModule-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.MqttConnector" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.MqttConnector-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html">com.angrygiant.mule.mqtt.MqttModule</a>
+  <a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html">com.angrygiant.mule.mqtt.MqttConnector</a>
 
-<div id="inherited-methods-com.angrygiant.mule.mqtt.MqttModule">
-  <div id="inherited-methods-com.angrygiant.mule.mqtt.MqttModule-list"
+<div id="inherited-methods-com.angrygiant.mule.mqtt.MqttConnector">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.MqttConnector-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-com.angrygiant.mule.mqtt.MqttModule-summary" style="display: none;">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.MqttConnector-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getBrokerHostName()">getBrokerHostName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getBrokerPort()">getBrokerPort</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getClientId()">getClientId</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getConnectionTimeout()">getConnectionTimeout</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getKeepAliveInterval()">getKeepAliveInterval</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getLwtMessage()">getLwtMessage</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getLwtQos()">getLwtQos</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getLwtTopicName()">getLwtTopicName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getPassword()">getPassword</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getPersistenceLocation()">getPersistenceLocation</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            long</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getSubscriptionDelay()">getSubscriptionDelay</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#getUsername()">getUsername</a></span>()</nobr>
-        
-  </td></tr>
 
 
 	 
@@ -1333,10 +1496,9 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#initialize()">initialize</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#connect(java.lang.String)">connect</a></span>(String clientId)</nobr>
         
-        <div class="jd-descrdiv">Initialize the connector by creating a client
-</div>
+        <div class="jd-descrdiv">Connects the MQTT client.</div>
   
   </td></tr>
 
@@ -1349,10 +1511,207 @@ From class
             
             
             
-            boolean</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#isCleanSession()">isCleanSession</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#disconnect()">disconnect</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Disconnects the client.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getBrokerServerUri()">getBrokerServerUri</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getClientId()">getClientId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Connection Identifier
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getConnectionTimeout()">getConnectionTimeout</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getKeepAliveInterval()">getKeepAliveInterval</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getLwtMessage()">getLwtMessage</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getLwtQos()">getLwtQos</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getLwtTopicName()">getLwtTopicName</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            MqttClient</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getMqttClient()">getMqttClient</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            MuleContext</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getMuleContext()">getMuleContext</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getPassword()">getPassword</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getPersistenceLocation()">getPersistenceLocation</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#getUsername()">getUsername</a></span>()</nobr>
         
   </td></tr>
 
@@ -1368,7 +1727,42 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#isLwtRetained()">isLwtRetained</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#isCleanSession()">isCleanSession</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#isConnected()">isConnected</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Are we connected
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#isLwtRetained()">isLwtRetained</a></span>()</nobr>
         
   </td></tr>
 
@@ -1384,9 +1778,9 @@ From class
             byte[]</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#publish(java.lang.String, java.lang.String, int, java.lang.Object, java.util.Map<java.lang.String, java.lang.Object>)">publish</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> message, int qos, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a> messagePayload, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/util/Map.html">Map</a>&lt;<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>,&nbsp;<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a>&gt; outboundHeaders)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#publish(java.lang.String, java.lang.Long, com.angrygiant.mule.mqtt.MqttConnector.DeliveryQoS, byte[], org.mule.api.MuleEvent)">publish</a></span>(String topicName, Long waitForCompletionTimeOut, <a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.DeliveryQoS.html">MqttConnector.DeliveryQoS</a> qos, byte[] messagePayload, MuleEvent muleEvent)</nobr>
         
-        <div class="jd-descrdiv">Publish processor - used to publish a message to a given topic on the MQTT broker.</div>
+        <div class="jd-descrdiv">Publish a message to a topic.</div>
   
   </td></tr>
 
@@ -1402,7 +1796,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setBrokerHostName(java.lang.String)">setBrokerHostName</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> brokerHostName)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setBrokerServerUri(java.lang.String)">setBrokerServerUri</a></span>(String brokerServerUri)</nobr>
         
   </td></tr>
 
@@ -1418,7 +1812,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setBrokerPort(int)">setBrokerPort</a></span>(int brokerPort)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setCleanSession(boolean)">setCleanSession</a></span>(boolean cleanSession)</nobr>
         
   </td></tr>
 
@@ -1434,7 +1828,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setCleanSession(boolean)">setCleanSession</a></span>(boolean cleanSession)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setConnectionTimeout(int)">setConnectionTimeout</a></span>(int connectionTimeout)</nobr>
         
   </td></tr>
 
@@ -1450,7 +1844,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setClientId(java.lang.String)">setClientId</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> clientId)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setKeepAliveInterval(int)">setKeepAliveInterval</a></span>(int keepAliveInterval)</nobr>
         
   </td></tr>
 
@@ -1466,7 +1860,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setConnectionTimeout(int)">setConnectionTimeout</a></span>(int connectionTimeout)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setLwtMessage(java.lang.String)">setLwtMessage</a></span>(String lwtMessage)</nobr>
         
   </td></tr>
 
@@ -1482,7 +1876,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setKeepAliveInterval(int)">setKeepAliveInterval</a></span>(int keepAliveInterval)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setLwtQos(int)">setLwtQos</a></span>(int lwtQos)</nobr>
         
   </td></tr>
 
@@ -1498,7 +1892,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setLwtMessage(java.lang.String)">setLwtMessage</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> lwtMessage)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setLwtRetained(boolean)">setLwtRetained</a></span>(boolean lwtRetained)</nobr>
         
   </td></tr>
 
@@ -1514,7 +1908,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setLwtQos(int)">setLwtQos</a></span>(int lwtQos)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setLwtTopicName(java.lang.String)">setLwtTopicName</a></span>(String lwtTopicName)</nobr>
         
   </td></tr>
 
@@ -1530,7 +1924,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setLwtRetained(boolean)">setLwtRetained</a></span>(boolean lwtRetained)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext muleContext)</nobr>
         
   </td></tr>
 
@@ -1546,7 +1940,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setLwtTopicName(java.lang.String)">setLwtTopicName</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> lwtTopicName)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setPassword(java.lang.String)">setPassword</a></span>(String password)</nobr>
         
   </td></tr>
 
@@ -1562,7 +1956,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setPassword(java.lang.String)">setPassword</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> password)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setPersistenceLocation(java.lang.String)">setPersistenceLocation</a></span>(String persistenceLocation)</nobr>
         
   </td></tr>
 
@@ -1578,7 +1972,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setPersistenceLocation(java.lang.String)">setPersistenceLocation</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> persistenceLocation)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#setUsername(java.lang.String)">setUsername</a></span>(String username)</nobr>
         
   </td></tr>
 
@@ -1594,59 +1988,9 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setSubscriptionDelay(long)">setSubscriptionDelay</a></span>(long subscriptionDelay)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttConnector.html#subscribe(java.lang.String, com.angrygiant.mule.mqtt.MqttConnector.DeliveryQoS, java.util.List<com.angrygiant.mule.mqtt.MqttTopicSubscription>, org.mule.api.callback.SourceCallback)">subscribe</a></span>(String topicFilter, <a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttConnector.DeliveryQoS.html">MqttConnector.DeliveryQoS</a> qos, List&lt;<a href="../../../../../../java/com/angrygiant/mule/mqtt/MqttTopicSubscription.html">MqttTopicSubscription</a>&gt; topicSubscriptions, SourceCallback callback)</nobr>
         
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#setUsername(java.lang.String)">setUsername</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> username)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#stopConnector()">stopConnector</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">Stop the client prior to departure</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/MqttModule.html#subscribe(java.lang.String, java.lang.String, java.lang.String, int, org.mule.api.callback.SourceCallback)">subscribe</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> subscriberId, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> topicName, <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> filter, int qos, SourceCallback callback)</nobr>
-        
-        <div class="jd-descrdiv">Publish processor - used to publish a message to a given topic on the MQTT broker.</div>
+        <div class="jd-descrdiv">Subscribe to a single or multiple topic filters.</div>
   
   </td></tr>
 
@@ -1666,7 +2010,7 @@ From class
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">java.lang.Object</a>
+  java.lang.Object
 
 <div id="inherited-methods-java.lang.Object">
   <div id="inherited-methods-java.lang.Object-list"
@@ -1685,7 +2029,7 @@ From class
             
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a></nobr>
+            Object</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">clone</span>()</nobr>
@@ -1704,7 +2048,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">equals</span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Object.html">Object</a> arg0)</nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
         
   </td></tr>
 
@@ -1733,7 +2077,7 @@ From class
             final
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/Class.html">Class</a>&lt;?&gt;</nobr>
+            Class&lt;?&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">getClass</span>()</nobr>
@@ -1797,7 +2141,7 @@ From class
             
             
             
-            <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></nobr>
+            String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">toString</span>()</nobr>
@@ -1862,19 +2206,19 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.Capabilities" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.Capabilities-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.basic.Capabilities" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.basic.Capabilities-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.Capabilities
+  <a href="../../../../../../com/angrygiant/mule/mqtt/basic/Capabilities.html">com.angrygiant.mule.mqtt.basic.Capabilities</a>
 
-<div id="inherited-methods-org.mule.api.Capabilities">
-  <div id="inherited-methods-org.mule.api.Capabilities-list"
+<div id="inherited-methods-com.angrygiant.mule.mqtt.basic.Capabilities">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.basic.Capabilities-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.Capabilities-summary" style="display: none;">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.basic.Capabilities-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -1890,7 +2234,196 @@ From interface
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">isCapableOf</span>(Capability arg0)</nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/basic/Capabilities.html#isCapableOf(com.angrygiant.mule.mqtt.basic.Capability)">isCapableOf</a></span>(<a href="../../../../../../java/com/angrygiant/mule/mqtt/basic/Capability.html">Capability</a> capability)</nobr>
+        
+        <div class="jd-descrdiv">Returns true if this module implements such
+ capability</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.basic.MetadataAware" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.basic.MetadataAware-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="../../../../../../com/angrygiant/mule/mqtt/basic/MetadataAware.html">com.angrygiant.mule.mqtt.basic.MetadataAware</a>
+
+<div id="inherited-methods-com.angrygiant.mule.mqtt.basic.MetadataAware">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.basic.MetadataAware-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.basic.MetadataAware-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/basic/MetadataAware.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the build of the DevKit used to create this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/basic/MetadataAware.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the version of the DevKit used to create this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/basic/MetadataAware.html#getModuleName()">getModuleName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the user-friendly name of this module
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/basic/MetadataAware.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the version of this module
+</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.angrygiant.mule.mqtt.process.ProcessAdapter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.angrygiant.mule.mqtt.process.ProcessAdapter-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="../../../../../../com/angrygiant/mule/mqtt/process/ProcessAdapter.html">com.angrygiant.mule.mqtt.process.ProcessAdapter</a>
+
+<div id="inherited-methods-com.angrygiant.mule.mqtt.process.ProcessAdapter">
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.process.ProcessAdapter-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.angrygiant.mule.mqtt.process.ProcessAdapter-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            &lt;T&gt;
+            <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessTemplate.html">ProcessTemplate</a>&lt;T,&nbsp;O&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/angrygiant/mule/mqtt/process/ProcessAdapter.html#getProcessTemplate()">getProcessTemplate</a></span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.context.MuleContextAware" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.context.MuleContextAware-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  org.mule.api.context.MuleContextAware
+
+<div id="inherited-methods-org.mule.api.context.MuleContextAware">
+  <div id="inherited-methods-org.mule.api.context.MuleContextAware-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.api.context.MuleContextAware-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">setMuleContext</span>(MuleContext arg0)</nobr>
         
   </td></tr>
 
@@ -2103,7 +2636,7 @@ From interface
 
 
 
-<A NAME="MqttModuleLifecycleAdapter()"></A>
+<A NAME="MqttConnectorProcessAdapter()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2115,7 +2648,7 @@ From interface
          
         
       </span>
-      <span class="sympad">MqttModuleLifecycleAdapter</span>
+      <span class="sympad">MqttConnectorProcessAdapter</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2149,7 +2682,7 @@ From interface
 
 
 
-<A NAME="dispose()"></A>
+<A NAME="getProcessTemplate()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2159,9 +2692,9 @@ From interface
          
          
          
-        void
+        <a href="../../../../../../java/com/angrygiant/mule/mqtt/process/ProcessTemplate.html">ProcessTemplate</a>&lt;P,&nbsp;<a href="../../../../../../java/com/angrygiant/mule/mqtt/adapters/MqttConnectorCapabilitiesAdapter.html">MqttConnectorCapabilitiesAdapter</a>&gt;
       </span>
-      <span class="sympad">dispose</span>
+      <span class="sympad">getProcessTemplate</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2175,125 +2708,6 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="initialise()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">initialise</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="start()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">start</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th>DefaultMuleException</td>
-            <td></td>
-        </tr>  
-        <tr>
-            <th>MuleException</td>
-            <td></td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="stop()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">stop</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th>DefaultMuleException</td>
-            <td></td>
-        </tr>  
-        <tr>
-            <th>MuleException</td>
-            <td></td>
-        </tr>
-      </table>
-  </div>
 
     </div>
 </div>
