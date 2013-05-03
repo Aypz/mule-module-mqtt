@@ -532,16 +532,8 @@ specify which configuration to use.</p>
     
     
 </table>
-<div class="jd-tagdata"><h3>Example</h3><pre>&lt;!-- Simple configuration with no reconnection strategy configured --&gt;
-&lt;mqtt:config clientId="muleClient"&gt;</pre></div>
-    <div class="jd-tagdata"><h3>Example</h3><pre>&lt;!-- Configuration with reconnection strategy configured for both subscribe and publish --&gt;
-&lt;configuration&gt;
-    &lt;reconnect-forever frequency="5000" /&gt;
-&lt;/configuration&gt;
-
-&lt;mqtt:config name="muleClient" clientId="muleClient"&gt;
-    &lt;reconnect-forever frequency="5000" /&gt;
-&lt;/mqtt:config&gt;</pre></div>
+<div class="jd-tagdata"><h3>Example</h3><pre>INCLUDE_ERROR</pre></div>
+    <div class="jd-tagdata"><h3>Example</h3><pre>INCLUDE_ERROR</pre></div>
     
 
 
@@ -654,11 +646,9 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
  <code><a href="../java/com/angrygiant/mule/mqtt/MqttConnector.html#MQTT_DELIVERY_TOKEN_VARIABLE">MQTT_DELIVERY_TOKEN_VARIABLE</a></code> will contain the MqttDeliveryToken
  that can be used for further awaiting completion.
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;!-- Publish a message with the default QoS --&gt;
-&lt;mqtt:publish topicName="test/topic" /&gt;</pre></div>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>INCLUDE_ERROR</pre></div>
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;!-- Publish a message with fire-and-forget QoS (ie. 0) --&gt;
-&lt;mqtt:publish topicName="test/topic" qos="FIRE_AND_FORGET" /&gt;</pre></div></p></div>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>INCLUDE_ERROR</pre></div></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Attributes</h5>
 
@@ -816,16 +806,9 @@ attempts to reconnect only during business hours. Such a setting can prove usefu
       
   <div class="jd-tagdata jd-tagdescr"><p>Subscribe to a single or multiple topic filters.
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;!-- Subscribe to a topic filter with the default QoS --&gt;
-&lt;mqtt:subscribe topicFilter="test/topic" /&gt;</pre></div>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>INCLUDE_ERROR</pre></div>
  <p/>
- <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;!-- Subscribe to multiple topic filters --&gt;
-&lt;mqtt:subscribe topicFilter="test/topic"&gt;
-    &lt;mqtt:topic-subscriptions&gt;
-        &lt;mqtt:topic-subscription topicFilter="test/topic" /&gt;
-        &lt;mqtt:topic-subscription topicFilter="test/other" qos="FIRE_AND_FORGET" /&gt;
-    &lt;/mqtt:topic-subscriptions&gt;
-&lt;/mqtt:subscribe&gt;</pre></div></p></div>
+ <div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>INCLUDE_ERROR</pre></div></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Attributes</h5>
 
