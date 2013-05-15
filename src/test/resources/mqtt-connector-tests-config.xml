@@ -8,10 +8,10 @@
         http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd
         http://www.mulesoft.org/schema/mule/mqtt http://www.mulesoft.org/schema/mule/mqtt/current/mule-mqtt.xsd">
 
-    <mqtt:config name="muleClient1" clientId="muleClient1"
+    <mqtt:config name="muleClient1" clientId="muleClient"
         brokerServerUri="tcp://localhost:${mqtt.broker.port}" />
 
-    <mqtt:config name="muleClient2" clientId="muleClient2"
+    <mqtt:config name="muleClient2" clientId="#[org.apache.commons.lang.RandomStringUtils.randomAlphanumeric(23)]"
         brokerServerUri="tcp://localhost:${mqtt.broker.port}" />
 
     <flow name="publisher">

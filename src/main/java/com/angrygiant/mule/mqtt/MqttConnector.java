@@ -45,6 +45,7 @@ import org.mule.api.annotations.param.Optional;
 import org.mule.api.annotations.param.Payload;
 import org.mule.api.callback.SourceCallback;
 import org.mule.api.context.MuleContextAware;
+import org.mule.api.expression.ExpressionManager;
 import org.mule.util.StringUtils;
 
 import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
@@ -219,8 +220,8 @@ public class MqttConnector implements MuleContextAware
 
         try
         {
-            LOGGER.debug("Creating client with ID of " + clientId);
-            client = new MqttClient(getBrokerServerUri(), clientId, clientPersistence);
+            LOGGER.debug("Creating client with ID of " + getActiveClientId());
+            client = new MqttClient(getBrokerServerUri(), getActiveClientId(), clientPersistence);
         }
         catch (final MqttException me)
         {
@@ -321,9 +322,11 @@ public class MqttConnector implements MuleContextAware
      * Connection Identifier
      */
     @ConnectionIdentifier
-    public String getClientId()
+    public String getActiveClientId()
     {
-        return clientId;
+        final boolean isExpression = StringUtils.startsWith(clientId,
+            ExpressionManager.DEFAULT_EXPRESSION_PREFIX);
+        return isExpression ? muleContext.getExpressionLanguage().<String> evaluate(clientId) : clientId;
     }
 
     /**

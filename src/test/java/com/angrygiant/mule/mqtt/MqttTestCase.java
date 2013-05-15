@@ -12,6 +12,7 @@ package com.angrygiant.mule.mqtt;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,6 +21,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.RandomStringUtils;
+import org.dna.mqtt.moquette.server.Server;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,6 +32,7 @@ import org.mule.tck.functional.EventCallback;
 import org.mule.tck.functional.FunctionalTestComponent;
 import org.mule.tck.junit4.FunctionalTestCase;
 import org.mule.tck.junit4.rule.DynamicPort;
+import org.mule.util.FileUtils;
 
 public class MqttTestCase extends FunctionalTestCase
 {
@@ -47,6 +50,8 @@ public class MqttTestCase extends FunctionalTestCase
     @Override
     protected MuleContext createMuleContext() throws Exception
     {
+        FileUtils.deleteQuietly(new File(Server.STORAGE_FILE_PATH));
+
         mqttTestBroker = new MqttTestBroker();
         mqttTestBroker.startServer(mqttBrokerPort.getNumber());
 
@@ -58,6 +63,8 @@ public class MqttTestCase extends FunctionalTestCase
     {
         mqttTestBroker.stopServer();
         mqttTestBroker = null;
+
+        FileUtils.deleteQuietly(new File(Server.STORAGE_FILE_PATH));
     }
 
     @Test

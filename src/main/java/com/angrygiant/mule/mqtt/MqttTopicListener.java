@@ -132,7 +132,7 @@ public class MqttTopicListener implements MqttCallback
                     LOGGER.warn("Failed to cleanly disconnect connector", me);
                 }
 
-                connector.connect(connector.getClientId());
+                connector.connect(connector.getActiveClientId());
 
                 connect();
             }
