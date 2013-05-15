@@ -6,6 +6,7 @@ In this sample, we'll learn how to publish data to an MQTT topic and how to subs
 More precisely, we're going to broadcast our Mule's JVM memory information to a topic named `/mule/info/memory/${server.host}`,
 where `${server.host}` will be Mule's host name.
 We will subscribe to all topics below `/mule/info/memory` so we'll be able to get memory information from all the Mules running this sample.
+We will use a (free and public test broker that the Mosquitto project maintains)[http://test.mosquitto.org/].
 
 ## Prerequisites
 
@@ -35,4 +36,46 @@ You'll need to restart the Studio for the installation to be completed.
 
 ### Setting up the project
 
+Now that we've got Mule Studio up and running, it's time to work on the Mule Application.
+Create a new Mule Project by clicking on "File > New > Mule Project".
+In the new project dialog box, the only thing you are required to enter is the name of the project.
+You can click on "Next" to go through the rest of pages.
+
+![](images/studio-mqtt-create.png)
+
+The first thing to do in our new application is to configure the connection to the test MQTT broker that's listening at `tcp://test.mosquitto.org:1883`.
+
+For this, in the message flow editor, click on "Global Elements" tab on the bottom of the page.
+Then click on "Create" button on the top right of the tab.
+In the "Choose Global Element" type dialog box that opens select "MQTT" under "Cloud Connectors" and click OK.
+
+![](images/studio-mqtt-global-1.png)
+
+In the MQTT configuration dialog box that follows, you need to enter the following information:
+
+- On the "General" tab, enter a name for your configuration settings such as "mqttPublisher"
+- In the "Client ID" field, enter an expression that will generate a unique ID for your MQTT connection, for example: `#['mule@'+server.host]`
+- In "Broker Server Uri" field, enter: `tcp://test.mosquitto.org:1883`
+
+![](images/studio-mqtt-global-2.png)
+
+In the pooling profile tab of this dialog, enter the following:
+
+![](images/studio-mqtt-global-3.png)
+
+You are done with the configuration. Click "OK" to close the dialog box.
+
+The XML for the global element should look like this:
+
+    <mqtt:config name="mqttPublisher" clientId="#['mule@'+server.host]"
+        brokerServerUri="tcp://test.mosquitto.org:1883" doc:name="MQTT">
+        <mqtt:connection-pooling-profile
+            initialisationPolicy="INITIALISE_ONE" exhaustedAction="WHEN_EXHAUSTED_WAIT"
+            maxActive="1" maxIdle="1"/>
+    </mqtt:config>
+
+### Building the publishing flow
+
 TBD
+
+
