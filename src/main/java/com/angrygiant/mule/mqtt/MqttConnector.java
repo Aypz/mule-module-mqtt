@@ -239,7 +239,7 @@ public class MqttConnector implements MuleContextAware
 
         try
         {
-            LOGGER.debug("Connecting client with ID of " + clientId);
+            LOGGER.debug("Connecting client with ID of " + getActiveClientId());
             client.connect(connectOptions);
         }
         catch (final MqttException me)
@@ -248,7 +248,7 @@ public class MqttConnector implements MuleContextAware
                 "Failed to connect the MQTT client", me);
         }
 
-        LOGGER.info("MQTT client successfully connected with ID: " + clientId + " at: "
+        LOGGER.info("MQTT client successfully connected with ID: " + getActiveClientId() + " at: "
                     + getBrokerServerUri());
     }
 
