@@ -20,6 +20,10 @@
         <url>https://github.com/mulesoft/mule-module-mqtt</url>
     </scm>
 
+    <properties>
+        <devkit.studio.package.skip>false</devkit.studio.package.skip>
+    </properties>
+
     <dependencies>
         <!-- MQTT -->
         <dependency>
