@@ -11,8 +11,7 @@
     <mqtt:config name="muleClient1" clientId="muleClient"
         brokerServerUri="tcp://localhost:${mqtt.broker.port}" />
 
-    <mqtt:config name="muleClient2" clientId="#[org.apache.commons.lang.RandomStringUtils.randomAlphanumeric(23)]"
-        brokerServerUri="tcp://localhost:${mqtt.broker.port}" />
+    <mqtt:config name="muleClient2" brokerServerUri="tcp://localhost:${mqtt.broker.port}" />
 
     <flow name="publisher">
         <vm:inbound-endpoint path="publisher.in"
