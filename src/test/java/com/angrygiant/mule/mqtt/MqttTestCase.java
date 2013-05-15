@@ -20,19 +20,44 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.RandomStringUtils;
+import org.junit.After;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mule.api.MuleContext;
 import org.mule.api.MuleEventContext;
 import org.mule.api.MuleMessage;
 import org.mule.tck.functional.EventCallback;
 import org.mule.tck.functional.FunctionalTestComponent;
 import org.mule.tck.junit4.FunctionalTestCase;
+import org.mule.tck.junit4.rule.DynamicPort;
 
-public class MqttITCase extends FunctionalTestCase
+public class MqttTestCase extends FunctionalTestCase
 {
+    @Rule
+    public DynamicPort mqttBrokerPort = new DynamicPort("mqtt.broker.port");
+
+    private MqttTestBroker mqttTestBroker;
+
     @Override
     protected String getConfigResources()
     {
         return "mqtt-connector-tests-config.xml";
+    }
+
+    @Override
+    protected MuleContext createMuleContext() throws Exception
+    {
+        mqttTestBroker = new MqttTestBroker();
+        mqttTestBroker.startServer(mqttBrokerPort.getNumber());
+
+        return super.createMuleContext();
+    }
+
+    @After
+    public void stopMqttBroker()
+    {
+        mqttTestBroker.stopServer();
+        mqttTestBroker = null;
     }
 
     @Test

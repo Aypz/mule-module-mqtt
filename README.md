@@ -8,13 +8,6 @@ experience a high latency situation.
 [MQTT][mqtt] is similar to many other messaging protocols, such as AMQP and JMS.  Communication occurs over a "topic", and
 has a given Quality of Service (QOS) setting that ranges from "fire and forget" to "guaranteed delivery".
 
-TESTING
-=======
-
-To run the integration tests on the default local [Mosquitto][mosquitto] setup, use:
-
-    mvn -Pit clean verify
-
 QUICK START
 ===========
 

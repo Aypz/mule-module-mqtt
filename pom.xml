@@ -20,29 +20,6 @@
         <url>https://github.com/mulesoft/mule-module-mqtt</url>
     </scm>
 
-    <profiles>
-        <profile>
-            <id>it</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.14.1</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <dependencies>
         <!-- MQTT -->
         <dependency>
@@ -62,6 +39,12 @@
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-client</artifactId>
             <version>${mule.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dna.mqtt</groupId>
+            <artifactId>moquette-broker</artifactId>
+            <version>0.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
