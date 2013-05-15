@@ -324,11 +324,6 @@ public class MqttConnector implements MuleContextAware
     @ConnectionIdentifier
     public String getActiveClientId()
     {
-        if (StringUtils.isBlank(clientId))
-        {
-            return "mule-" + StringUtils.left(getMuleContext().getConfiguration().getId(), 18);
-        }
-
         final boolean isExpression = StringUtils.startsWith(clientId,
             ExpressionManager.DEFAULT_EXPRESSION_PREFIX);
         return isExpression ? muleContext.getExpressionLanguage().<String> evaluate(clientId) : clientId;
