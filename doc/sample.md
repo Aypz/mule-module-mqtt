@@ -6,13 +6,13 @@ In this sample, we'll learn how to publish data to an MQTT topic and how to subs
 More precisely, we're going to broadcast our Mule's JVM memory information to a topic named `/mule/info/memory/${server.host}`,
 where `${server.host}` will be Mule's host name.
 We will subscribe to all topics below `/mule/info/memory` so we'll be able to get memory information from all the Mules running this sample.
-We will use a (free and public test broker that the Mosquitto project maintains)[http://test.mosquitto.org/].
+We will use a [free and public test broker that the Mosquitto project maintains](http://test.mosquitto.org/).
 
 ## Prerequisites
 
 In order to follow this sample walk-through you'll need:
 
-- A basic understanding of MQTT. Refer this (protocol's documentation)[http://mqtt.org/documentation] if need be.
+- A basic understanding of MQTT. Refer this [protocol's documentation](http://mqtt.org/documentation) if need be.
 - A working installation of a recent version of [Mule Studio](http://www.mulesoft.org/download-mule-esb-community-edition).
 
 ## Building the sample application
