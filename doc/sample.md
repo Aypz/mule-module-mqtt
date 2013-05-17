@@ -13,7 +13,7 @@ We will use a (free and public test broker that the Mosquitto project maintains)
 In order to follow this sample walk-through you'll need:
 
 - A basic understanding of MQTT. Refer this (protocol's documentation)[http://mqtt.org/documentation] if need be.
-- A working installation of a recent version of (Mule Studio)[http://www.mulesoft.org/download-mule-esb-community-edition].
+- A working installation of a recent version of [Mule Studio](http://www.mulesoft.org/download-mule-esb-community-edition).
 
 ## Building the sample application
 
