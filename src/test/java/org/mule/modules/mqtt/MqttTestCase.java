@@ -7,7 +7,7 @@
  * 
  */
 
-package com.angrygiant.mule.mqtt;
+package org.mule.modules.mqtt;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

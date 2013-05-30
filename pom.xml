@@ -8,7 +8,7 @@
         <version>3.4.0</version>
     </parent>
 
-    <groupId>com.angrygiant.mule</groupId>
+    <groupId>org.mule.modules</groupId>
     <artifactId>mule-module-mqtt</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>mule-module</packaging>

@@ -7,10 +7,13 @@
  * 
  */
 
-package com.angrygiant.mule.mqtt;
+package org.mule.modules.mqtt;
 
-import com.angrygiant.mule.mqtt.MqttConnector.DeliveryQoS;
+import org.mule.modules.mqtt.MqttConnector.DeliveryQoS;
 
+/**
+ * Topic Subscription Definition for the Mule MQTT Module.
+ */
 public class MqttTopicSubscription
 {
     private String topicFilter;

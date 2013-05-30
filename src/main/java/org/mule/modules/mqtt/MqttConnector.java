@@ -7,7 +7,7 @@
  * 
  */
 
-package com.angrygiant.mule.mqtt;
+package org.mule.modules.mqtt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,29 +46,15 @@ import org.mule.api.annotations.param.Payload;
 import org.mule.api.callback.SourceCallback;
 import org.mule.api.context.MuleContextAware;
 import org.mule.api.expression.ExpressionManager;
+import org.mule.modules.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
 import org.mule.util.StringUtils;
 
-import com.angrygiant.mule.mqtt.holders.MqttTopicSubscriptionExpressionHolder;
-
 /**
- * Mule MQTT Module
+ * Mule MQTT Module.
  * <p/>
  * {@sample.config ../../../doc/mqtt-connector.xml.sample mqtt:config-1}
  * <p/>
  * {@sample.config ../../../doc/mqtt-connector.xml.sample mqtt:config-2}
- * <p/>
- * Copyright (c) MuleSoft, Inc. All rights reserved. http://www.mulesoft.com
- * <p/>
- * <p>
- * The software in this package is published under the terms of the CPAL v1.0 license, a copy of
- * which has been included with this distribution in the LICENSE.md file.
- * </p>
- * <p>
- * Created with IntelliJ IDEA. User: dmiller@angrygiant.com Date: 9/21/12 Time: 9:57 AM
- * </p>
- * <p>
- * Module definition for publishing and subscribing to a given MQTT broker server.
- * </p>
  * 
  * @author dmiller@angrygiant.com
  */

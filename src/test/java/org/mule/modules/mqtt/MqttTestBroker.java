@@ -7,7 +7,7 @@
  * 
  */
 
-package com.angrygiant.mule.mqtt;
+package org.mule.modules.mqtt;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
